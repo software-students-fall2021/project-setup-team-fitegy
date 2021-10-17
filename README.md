@@ -9,10 +9,10 @@ Fitegy began with the idea that working out alone may be difficult to keep up wi
 # Core Team Members
 Alex Ko: https://github.com/fyk211 \
 Anona Yang: \
-Christina Kovacs: \
+Christian Kovacs: https://github.com/ckovacs1\
 Corey Dubin: https://github.com/dubincorey \
 Ina Youn: https://github.com/inayoun \
-Salma Hashem: 
+Salma Hashem: https://github.com/Salma-Hashem
 
 # Instructions
 Coming soon.
