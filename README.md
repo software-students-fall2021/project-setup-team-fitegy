@@ -7,11 +7,11 @@ Our product vision is to create a socially engaging way to stay healthy with fri
 Fitegy began with the idea that working out alone may be difficult to keep up with for beginners or those motivated by others or by challenges. The idea was proposed by Alex Ko and Cory Dublin to create a social app that keeps friends motivated to stay fit. For more information and how to contribute to our project, please read [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 # Core Team Members
-Alex Ko: https://github.com/fyk211\
+Alex Ko: https://github.com/fyk211 \
 Anona Yang: \
 Christina Kovacs: \
-Corey Dubin: https://github.com/dubincorey\
-Ina Youn: https://github.com/inayoun\
+Corey Dubin: https://github.com/dubincorey \
+Ina Youn: https://github.com/inayoun \
 Salma Hashem: 
 
 # Instructions
