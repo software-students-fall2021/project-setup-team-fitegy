@@ -1,3 +1,9 @@
+# Site Map and Wireframes
+Check out our site map and wireframes here: https://github.com/software-students-fall2021/project-setup-team-fitegy/tree/master/ux-design
+
+# Prototype (Invision)
+https://invis.io/RW11VPGH4MTN
+
 # Project Description
 
 Fitegy is a social fitness app where users can choose or create their own workout challenges and send challenges to friends. Once users collect points through completing challenges, and can redeem these points for prizes and goods. 
@@ -17,9 +23,5 @@ Salma Hashem: https://github.com/Salma-Hashem
 # Instructions
 Coming soon.
 
-# Site Map and Wireframes
-Check out our site map and wireframes here: https://github.com/software-students-fall2021/project-setup-team-fitegy/tree/master/ux-design
 
-# Prototype (Invision)
-https://invis.io/RW11VPGH4MTN
 
