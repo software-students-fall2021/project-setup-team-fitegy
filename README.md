@@ -4,6 +4,9 @@ Check out our site map and wireframes here: https://github.com/software-students
 # Prototype (Invision)
 https://invis.io/RW11VPGH4MTN
 
+# Prototype (proto.io)
+We made some other prototypes with further design, texts, images, etc to make the app more realistic on proto.io here: https://pr.to/XDB4B4/
+
 # Project Description
 
 Fitegy is a social fitness app where users can choose or create their own workout challenges and send challenges to friends. Once users collect points through completing challenges, and can redeem these points for prizes and goods. 
