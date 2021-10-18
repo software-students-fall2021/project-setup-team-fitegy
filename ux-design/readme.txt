@@ -1,3 +1,4 @@
-The initial user experience design of your project will live in this directory by the end of Sprint 0.
+Fitegy Site Map, Wireframes, and Prototypes
 
-Place an exported version of your app prototype into this "prototype" sub-directory.
+# Site Map
+<img src="https://github.com/software-students-fall2021/project-setup-team-fitegy/blob/master/ux-design/Fitegy%20Site%20Map.drawio.png?raw=true" width="700px">
