@@ -13,8 +13,10 @@ The site map for Fitegy. Basically we will have 4 main screens:
 
 
 ## Wireframes
+<p align="center">
+<h2> Timeline Page </h2>
+</p>
 
-### Timeline Page
 <p align="center">
     <img src="https://github.com/software-students-fall2021/project-setup-team-fitegy/blob/master/ux-design/timeline.png?raw=true" width="500px" >
 </p>
