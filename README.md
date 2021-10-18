@@ -17,6 +17,9 @@ Salma Hashem: https://github.com/Salma-Hashem
 # Instructions
 Coming soon.
 
+# Site Map and Wireframes
+Check out our site map and wireframes here: https://github.com/software-students-fall2021/project-setup-team-fitegy/tree/master/ux-design
+
 # Prototype (Invision)
 https://invis.io/RW11VPGH4MTN
 
