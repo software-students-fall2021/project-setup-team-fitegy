@@ -4,7 +4,7 @@ import { Container } from "@mui/material";
 
 import Challenge from "./components/Challenge";
 
-const challenges = [<Card />];
+const challenges = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />];
 const getChallenges = challenges.map((challenge) => {
   return <Challenge key={challenge.name}>{challenge}</Challenge>;
 });
@@ -16,7 +16,6 @@ const ChallengeManager = () => {
         display: "grid",
         gridTemplateColumns: "repeat(2, 1fr)",
         gap: 2,
-        minHeight: 200,
       }}
     >
       {getChallenges}
