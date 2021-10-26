@@ -52,8 +52,8 @@ const Challenge = (props) => {
 
         <Button
           onClick={triggerToggle}
-          variant="contained"
           color="warning"
+          variant={toggle ? "outlined" : "contained"}
           sx={{ width: "100%" }}
         >
           {toggle ? <CheckIcon /> : <>Join</>}
