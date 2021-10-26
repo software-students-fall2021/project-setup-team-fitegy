@@ -6,9 +6,6 @@ function App() {
 
   return (
     <div id="screen">
-      <div id="notification">
-        
-      </div>
       <Feed />
     </div>
   );
