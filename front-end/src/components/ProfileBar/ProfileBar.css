@@ -4,6 +4,7 @@
     height: 844px;
 }
 #profilebar{
+    position: relative;
     display: flex;
     width: 390px;
     height: 422px;
