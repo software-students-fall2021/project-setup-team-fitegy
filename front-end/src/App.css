@@ -1,4 +1,3 @@
-
 .App {
   text-align: center;
 }
@@ -76,4 +75,11 @@ p {
 }
 .input-style:focus {
   border: 1px solid turquoise;
+}
+=======
+#screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
