@@ -1,31 +1,25 @@
-import React from "react";
-import './App.css';
-import CreateNew from "./components/CreateNew/createNew.js";
-import ProfileBar from "./components/ProfileBar/ProfileBar.js";
+import "./App.css";
+import CreateNew from "./Components/CreateNew/createNew.js";
+import ProfileBar from "./Components/ProfileBar/ProfileBar.js";
 import React, { useState, useEffect } from "react";
-import Feed from "./Components/feed/feed"
-import Notification_page from "./Components/notification_page/notification_page";
+import Feed from "./Components/feed/feed";
+import NotificationPage from "./Components/notification_page/notification_page";
 import CreateChallenge from "./Components/CreateChallenge/createChallenge.js";
 import ChallengeManager from "./Components/ChallengeManager/ChallengeManager";
-
-import CreateNew from "./Components/CreateNew/createNew.js";
-import ChallengeManager from "./Components/ChallengeManager/ChallengeManager.js";
-import CreateChallenge from "./Components/CreateChallenge/createChallenge.js";
-
-import CreateNew from "./Components/CreateNew/createNew.js";
+import CreatePost from "./Components/CreatePost/CreatePost.js";
+import SelectPhoto from "./Components/SelectPhoto/SelectPhoto.js";
 
 function App() {
-
   return (
     <div id="screen">
-      <Feed />
-      <Notification_page /> 
-      <CreateNew /> 
-      
-      <CreateNew /> 
-      <CreateChallenge /> 
+      <Feed id="page1" />
+      <NotificationPage id="page2" />
+      <CreateNew />
+      <CreateChallenge />
       <ProfileBar />
-      <ChallengeManager/>
+      <ChallengeManager />
+      <CreatePost />
+      <SelectPhoto />
     </div>
   );
 }
