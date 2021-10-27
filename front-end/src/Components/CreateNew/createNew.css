@@ -1,0 +1,26 @@
+#createNew{
+    width: 390px;
+    height: 844px;
+    display: flex;
+    justify-content: start;
+    padding: 20px;
+    flex-direction: column;
+}
+h1 {
+    
+    display: flex;
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    
+}
+
+.message{
+    font-size: 13px;
+    text-align: center;
+    padding: 150px;
+    width: 140px;
+    height: 45px;
+}
+
+
