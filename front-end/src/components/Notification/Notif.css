@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap');
+
+
+#notif{
+    background-color: white;
+    width: 360px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 5px 10px 20px rgb(129, 129, 129);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#profile_pic{
+    display: flex;
+    padding-left: 10px;
+}
+
+#avatar{
+    width: 35px;
+    height: 35px;
+    flex-grow: 0.5;
+}
+
+
+#notif_content{
+    flex-grow: 2;
+    font-family: sans-serif;
+    padding-left: 10px;
+    padding-top: 5px;;
+    font-size: 10px;
+}
+
