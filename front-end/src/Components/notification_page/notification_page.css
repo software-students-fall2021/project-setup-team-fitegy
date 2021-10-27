@@ -1,0 +1,8 @@
+#notification_page{
+    width: 390px;
+    height: 844px;
+    display: flex;
+    justify-content: start;
+    padding: 20px;
+    flex-direction: column;
+}
