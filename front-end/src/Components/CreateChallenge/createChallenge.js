@@ -78,7 +78,7 @@ const CreateChallenge = () =>{
                 name="Private"
                 type="checkbox"
                 onChange={e => setPrivate(e.target.value)}
-                required />
+                />
                     
             </label>
 

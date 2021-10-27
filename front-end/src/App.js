@@ -6,7 +6,10 @@ import CreateChallenge from "./Components/CreateChallenge/createChallenge.js";
 import ChallengeManager from "./Components/ChallengeManager/ChallengeManager";
 
 import CreateNew from "./Components/CreateNew/createNew.js";
+import ChallengeManager from "./Components/ChallengeManager/ChallengeManager.js";
+import CreateChallenge from "./Components/CreateChallenge/createChallenge.js";
 
+import CreateNew from "./Components/CreateNew/createNew.js";
 
 function App() {
 
@@ -14,6 +17,8 @@ function App() {
     <div id="screen">
       <Feed />
       <Notification_page /> 
+      <CreateNew /> 
+      
       <CreateNew /> 
       <CreateChallenge /> 
       <ChallengeManager />
