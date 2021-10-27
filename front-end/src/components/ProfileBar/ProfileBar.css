@@ -1,7 +1,6 @@
 #screen{
     display: flex;
     width: 390px;
-    height: 844px;
 }
 #profilebar{
     position: relative;
