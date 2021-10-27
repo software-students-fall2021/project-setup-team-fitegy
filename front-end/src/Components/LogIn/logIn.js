@@ -43,8 +43,6 @@ const LogIn = () =>{
             </label>
             <button >Log In</button>
 
-        
-
 
         </form>
   

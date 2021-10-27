@@ -8,6 +8,7 @@ import CreateChallenge from "./Components/CreateChallenge/createChallenge.js";
 import ChallengeManager from "./Components/ChallengeManager/ChallengeManager";
 import CreatePost from "./Components/CreatePost/CreatePost.js";
 import SelectPhoto from "./Components/SelectPhoto/SelectPhoto.js";
+import LogIn from "./Components/LogIn/logIn";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <ChallengeManager />
       <CreatePost />
       <SelectPhoto />
+      <LogIn/>
     </div>
   );
 }
