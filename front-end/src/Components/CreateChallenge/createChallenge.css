@@ -12,16 +12,13 @@
     align-items: center;
 
 }
-body {
-    
+#Challenge { 
     font-family: roboto;
-    height: 97vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #4a4e6900;
   }
   form {
     position: relative;

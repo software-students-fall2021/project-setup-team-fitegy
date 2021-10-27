@@ -5,6 +5,7 @@
     justify-content: start;
     padding: 20px;
     flex-direction: column;
+    color:rgb(255, 255, 255);
 }
 h1 {
     color:rgb(255, 255, 255);
@@ -15,10 +16,6 @@ h1 {
     justify-content: center;
     font-family: "roboto";
     
-}
-body{
-    color:rgb(255, 255, 255);
-
 }
 
 #message{
