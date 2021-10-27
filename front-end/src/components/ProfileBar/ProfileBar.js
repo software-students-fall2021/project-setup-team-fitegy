@@ -11,8 +11,8 @@ import { Container, CardMedia } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import {Link} from 'react-router-dom'
 import './ProfileBar.css'
-import Post from '../Post/Post.js'
-import Challenge from '../Challenge/Challenge'
+import Post from '../PostforProfile/PostforProfile.js'
+import Challenge from '../ChallengeforProfile/ChallengeforProfile'
 
 const challenges = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />];
 const getChallenges = challenges.map((challenge) => {

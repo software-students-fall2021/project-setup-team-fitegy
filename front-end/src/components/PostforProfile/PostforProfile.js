@@ -1,4 +1,4 @@
-import "./Post.css"
+import "./PostforProfile.css"
 import React, {useState} from "react";
 import { Avatar} from '@mui/material';
 import Divider from '@mui/material/Divider';
