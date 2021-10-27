@@ -1,14 +1,13 @@
 import React from "react";
 import './App.css';
-import CreateNew from "./components/CreateNew/createNew.js";
-import ProfileBar from "./components/ProfileBar/ProfileBar.js";
 import React, { useState, useEffect } from "react";
-import Feed from "./Components/feed/feed"
-import Notification_page from "./Components/notification_page/notification_page";
-import CreateChallenge from "./Components/CreateChallenge/createChallenge.js";
-import ChallengeManager from "./Components/ChallengeManager/ChallengeManager";
+import Feed from "./temp/feed/feed"
+import Notification_page from "./temp/notification_page/notification_page";
+import CreateChallenge from "./temp/CreateChallenge/createChallenge.js";
+import ChallengeManager from "./temp/ChallengeManager/ChallengeManager";
+import CreateNew from "./temp/CreateNew/createNew.js";
+import ProfileBar from "./temp/ProfileBar/ProfileBar.js";
 
-import CreateNew from "./Components/CreateNew/createNew.js";
 
 
 function App() {
@@ -19,8 +18,8 @@ function App() {
       <Notification_page /> 
       <CreateNew /> 
       <CreateChallenge /> 
-      <ProfileBar />
       <ChallengeManager/>
+      <ProfileBar />
     </div>
   );
 }
