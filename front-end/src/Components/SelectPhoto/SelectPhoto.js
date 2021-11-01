@@ -3,10 +3,8 @@ import './SelectPhoto.css'
 
 const SelectPhoto= (props) => {
     return (
-      <div className="SelectPhoto">
+      <div className="SelectPhoto" style={{ backgroundImage: "url('/images/background.png')" }}>
           <h1>All Photos</h1>
-        <section className="select">
-        </section>
         <button onClick={selectPhoto}>Select</button>
       </div>
     )
