@@ -5,22 +5,43 @@
     justify-content: start;
     padding: 20px;
     flex-direction: column;
+    color:rgb(255, 255, 255);
 }
 h1 {
-    
+    color:rgb(255, 255, 255);
     display: flex;
-    font-size: 36px;
+    font-size: 20px;
     line-height: 40px;
     text-align: center;
+    justify-content: center;
+    font-family: "roboto";
     
 }
 
-.message{
+#message{
     font-size: 13px;
     text-align: center;
-    padding: 150px;
+    padding: 100px;
     width: 140px;
     height: 45px;
+    color:rgb(255, 255, 255);
+
 }
+#cancel{
+    position: absolute;
+    margin-top: 25px;
+    left: 10px;
+    cursor: pointer;
+    margin-right: 0.25em;
+    
+    border: none;
+    background-color: #22223b00;
+    color: #fefefe;
+
+  }
+  #cancel:hover {
+    background-color: #4a4e6900;
+    color: #c4bebe;
+  }
 
 

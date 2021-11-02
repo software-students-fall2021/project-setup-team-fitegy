@@ -2,7 +2,7 @@
     box-sizing: border-box;
    
   }
-  #Challenge{
+  #LogIn{
     width: 390px;
     height: 844px;
     display: flex;
@@ -12,7 +12,7 @@
     align-items: center;
 
 }
-#Challenge { 
+#Challenge {
     font-family: roboto;
     width: 100%;
     display: flex;
@@ -67,41 +67,16 @@
     color: rgb(255, 255, 255);
   
   }
-  input, select {
-    padding: 10px 10px;
-    border-radius: 5px;
-    border: 1px solid #d6d1d5;
-    margin-top: 5px;
-  }
-  select {
-    display: block;
-    width: 100%;
-    height: 35px;
-    
-  }
-  input[type="checkbox"] {
-    display: inline-block;
-    width: auto;
-    margin-top: 2em;
-    margin-right: 10px;
-    
-    
-  }
-  ::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-  }
+ 
+
   button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
     cursor: pointer;
     margin-right: 0.25em;
-    
     border: none;
     border-radius: 4px;
-    background-color: #22223b00;
+    background-color: #83642000;
     color: #fefefe;
-    margin-top: -30px;
+    margin-top: -10px;
     
   }
   button:hover {
@@ -121,26 +96,4 @@
     flex-wrap: wrap;
     
   }
-  #image{
-    padding-top: 0.5em;
-    padding-left: 0.5em;
-    position: absolute;
-    top: 330px;
-    right: 260px;
-  }
-  #cancel{
-    position: absolute;
-    left: 10px;
-    cursor: pointer;
-    margin-right: 0.25em;
-    
-    border: none;
-    background-color: #22223b00;
-    color: #fefefe;
-    margin-top: -30px;
-
-  }
-  #cancel:hover {
-    background-color: #4a4e6900;
-    color: #c4bebe;
-  }
+ 

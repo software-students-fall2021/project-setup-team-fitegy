@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import "./createNew.css"
 import IconButton from '@mui/material/IconButton';
 import { AddOutlined, CreateOutlined } from '@mui/icons-material';
@@ -8,6 +8,7 @@ const CreateNew = () =>{
    return(
     <div id="createNew" style={{ backgroundImage: "url('/images/background.png')" }}>
         <h1>Create a new...</h1>
+        <button id= "cancel"> Cancel</button>
             <div>
                 <IconButton aria-label= "Create a Challenge" color="primary" style={{ width: 75, height: 75 }}>
                     <CreateOutlined />
