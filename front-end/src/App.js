@@ -1,27 +1,27 @@
 import "./App.css";
+import React, { useState, useEffect } from "react";
+
 import CreateNew from "./Components/CreateNew/createNew.js";
 import ProfileBar from "./Components/ProfileBar/ProfileBar.js";
-import React, { useState, useEffect } from "react";
-import Feed from "./Components/feed/feed";
+import Feed from "./Components/feed/feed.js";
 import CreateChallenge from "./Components/CreateChallenge/createChallenge.js";
-import ChallengeManager from "./Components/ChallengeManager/ChallengeManager";
+import ChallengeManager from "./Components/ChallengeManager/ChallengeManager.js";
 import CreatePost from "./Components/CreatePost/CreatePost.js";
 import SelectPhoto from "./Components/SelectPhoto/SelectPhoto.js";
-import LogIn from "./Components/LogIn/logIn";
-import Notification_page from "./Components/notification_page/notification_page";
+import LogIn from "./Components/LogIn/logIn.js";
+import NotificationPage from "./Components/NotificationPage/NotificationPage.js";
 
 function App() {
   return (
     <div id="screen">
       <LogIn/>
       <Feed/>
-      <Notification_page/>
+      <NotificationPage/>
       <ProfileBar />
       <CreateChallenge />
       <ChallengeManager />
       <CreatePost />
       <SelectPhoto />
-      
     </div>
   );
 }
