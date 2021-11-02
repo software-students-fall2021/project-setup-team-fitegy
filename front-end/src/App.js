@@ -16,10 +16,12 @@ function App() {
       <LogIn/>
       <Feed/>
       <Notification_page/>
+      <ProfileBar />
       <CreateChallenge />
       <ChallengeManager />
       <CreatePost />
       <SelectPhoto />
+      
     </div>
   );
 }
