@@ -40,32 +40,32 @@ const Post = (props) => {
       setCount(count + 1);
     };
     return (
-      <div id="post">
-          <div id="top_profile">
-          <Avatar id="avatar" {...stringAvatar(props.name)} />
-            <div id="details">
-              <p className="name"> {props.name}</p>
-              <p className="location"> {props.location}</p>
+      <div id="postfp">
+          <div id="top_profilefp">
+          <Avatar id="avatarfp" {...stringAvatar(props.name)} />
+            <div id="detailsfp">
+              <p className="namefp"> {props.name}</p>
+              <p className="locationfp"> {props.location}</p>
             </div>
           </div>
 
-          <Divider id="divider" variant="middle" />
+          <Divider id="dividerfp" variant="middle" />
 
-          <div id="content">
+          <div id="contentfp">
             <p> {props.content} </p>
           </div>
 
-          <div id="bottom_bar">
-            <div id="like" className="icon_container" onClick={handleClick}>
+          <div id="bottom_barfp">
+            <div id="likefp" className="icon_container" onClick={handleClick}>
               <img id="like_icon" lassName="icon" width="20" height="20" src="/images/heart.png" />
               <span> {count} Like </span>
             </div>
-            <div id="comment" className="icon_container">
+            <div id="commentfp" className="icon_containerfp">
               <img className="icon" width="20" height="20" src="/images/comment.png" />
               <span> Comment </span>
             </div>
-            <div id="check_challenge" className="icon_container">
-              <img className="icon" width="20" height="20" src="/images/light.png" />
+            <div id="check_challengefp" className="icon_containerfp">
+              <img className="iconfp" width="20" height="20" src="/images/light.png" />
               <span> See Challenge </span>
             </div>
           </div>

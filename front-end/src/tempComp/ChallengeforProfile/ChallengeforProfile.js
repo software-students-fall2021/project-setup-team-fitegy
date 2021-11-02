@@ -25,12 +25,13 @@ const Challenge = (props) => {
     >
       <Box
         sx={{
-          width: "90%",
+          width: "60%",
+          height: "95%"
         }}
       >
         <Box
           sx={{
-            width: "80%",
+            width: "100%",
             display: "grid",
             gridTemplateRows: "repeat(1, 1fr)",
           }}
@@ -40,21 +41,21 @@ const Challenge = (props) => {
           <Box
             sx={{
               gridTemplateColumns: "repeat(2, 1fr)",
-              mt: 1,
+              mt: 0.2,
             }}
           >
             <DirectionsBikeIcon sx={{ fontSize: "small" }} />
             <EmojiEventsIcon sx={{ fontSize: "small" }} />
           </Box>
           <Box sx={{ fontSize: 10, my: 1 }}>Challenge Description</Box>
-          <Box sx={{ fontSize: 10, mt: 1, mb: 2 }}>Challenge Date Range</Box>
+          <Box sx={{ fontSize: 10, mt: 0.5, mb: 0.5 }}>Challenge Date Range</Box>
         </Box>
 
         <Button
           onClick={triggerToggle}
           color="warning"
           variant={toggle ? "outlined" : "contained"}
-          sx={{ width: "100%" }}
+          sx={{ width: "100%", justifySelf: 'center'}}
         >
           {toggle ? <CheckIcon /> : <>Update</>}
         </Button>

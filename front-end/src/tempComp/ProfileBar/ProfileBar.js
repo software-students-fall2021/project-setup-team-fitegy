@@ -29,7 +29,7 @@ function ProfileBar() {
   return (
     <div
       id="screen"
-      style={{ backgroundImage: "url('/images/background.png')" }}
+      style={{ height: 844, backgroundImage: "url('/images/background.png')" }}
     >
       <Container id="profilebar" sx={{ width: 390, height: 422 }}>
         <TabContext value={value}>

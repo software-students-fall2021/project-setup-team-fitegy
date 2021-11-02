@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap');
 
 
-#post{
+#postfp{
     background-color: white;
     width: 320px;
     height: 210px;
@@ -14,19 +14,19 @@
     margin-bottom: 20px;
 }
 
-#top_profile{
+#top_profilefp{
     display: flex;
     padding-left: 10px;
 }
 
-#avatar{
+#avatarfp{
     width: 35px;
     height: 35px;
     margin: auto;
     flex-grow: 0.5;
 }
 
-#details {
+#detailsfp {
     
     margin-left: 10px;
     height: 40px;
@@ -36,34 +36,34 @@
 }
 
 
-.name{
+.namefp{
     font-size: 13px;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
 }
 
-.location{
+.locationfp{
     font-size: 10px;
     color:rgb(156, 156, 156);
 }
 
-#divider{
+#dividerfp{
     margin-top: 10px;;
 }
 
-#content{
+#contentfp{
     flex-grow: 2;
     font-family: sans-serif;
-    padding: 15px;
+    padding: 7px;
 }
 
-#bottom_bar{
+#bottom_barfp{
     flex-grow: 0.2;
     display: flex;
     justify-content: space-evenly;
 }
 
-.icon_container{
+.icon_containerfp{
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -72,25 +72,25 @@
     color: rgb(141, 141, 141);
     opacity: 0.6;
 }
-#like:hover, #comment:hover, #check_challenge:hover {
+#likefp:hover, #commentfp:hover, #check_challengefp:hover {
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
 
-#like_icon{
+#like_iconfp{
     opacity: 0.5;
 }
 
-#comment{
+#commentfp{
     flex-grow: 1;
     flex-wrap: wrap;
 
 }
 
-#check_challenge{
+#check_challengefp{
     flex-grow: 1;
 }
 
-#icon{
+#iconfp{
    justify-content: center;
 }
