@@ -2,7 +2,7 @@ import React from "react";
 import "./notification_page.css"
 import Notif from "../Notification/Notif"
 
-const Notification_page = () => {
+const NotificationPage = () => {
     return (
       <div id="notification_page" style={{ backgroundImage: "url('/images/background.png')" }}>
           <Notif name="Henry Goulding" content="Henry Goulding liked your post: Daily challenge completed with..."/>
@@ -21,4 +21,4 @@ const Notification_page = () => {
     );
   }
   
-  export default Notification_page; 
+  export default NotificationPage; 
