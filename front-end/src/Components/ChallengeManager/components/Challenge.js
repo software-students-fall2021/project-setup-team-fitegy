@@ -16,7 +16,7 @@ const Challenge = (props) => {
   return (
     <Card
       sx={{
-        minHeight: 225,
+        minHeight: 220,
         mt: 2,
         display: "flex",
         justifyContent: "center",
@@ -26,16 +26,22 @@ const Challenge = (props) => {
       <Box
         sx={{
           width: "90%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Box
           sx={{
             width: "80%",
             display: "grid",
+            flexDirection: "column",
+            justifyContent: "center",
             gridTemplateRows: "repeat(1, 1fr)",
           }}
         >
-          <ShieldIcon />
+          <ShieldIcon/>
           <Box sx={{ fontWeight: "bold", mt: 1 }}>Challenge Title</Box>
           <Box
             sx={{
@@ -54,7 +60,7 @@ const Challenge = (props) => {
           onClick={triggerToggle}
           color="warning"
           variant={toggle ? "outlined" : "contained"}
-          sx={{ width: "100%" }}
+          sx={{ width: "90%", marginLeft: "auto"}}
         >
           {toggle ? <CheckIcon /> : <>Join</>}
         </Button>
