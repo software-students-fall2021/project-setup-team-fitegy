@@ -26,8 +26,8 @@ const CreateChallenge = () =>{
     <div id="Challenge" style={{ backgroundImage: "url('/images/background.png')" }}>
         <form onSubmit={handleSubmit}>
             <h1>Create Challenge</h1>
-            <button id= "cancel"> Cancel</button>
-            <button>Post</button>
+            <button id= "cancel" > Cancel</button>
+            <button id="post_button">Post</button>
             <label>
                 Challenge Name:
                 <input

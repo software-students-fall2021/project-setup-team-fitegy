@@ -91,7 +91,6 @@
     filter: invert(1);
   }
   button {
-    position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
@@ -101,7 +100,6 @@
     border-radius: 4px;
     background-color: #22223b00;
     color: #fefefe;
-    margin-top: -30px;
     
   }
   button:hover {
@@ -143,4 +141,9 @@
   #cancel:hover {
     background-color: #4a4e6900;
     color: #c4bebe;
+  }
+
+  #post_button{
+    position: absolute;
+    margin-top: -30px;
   }
