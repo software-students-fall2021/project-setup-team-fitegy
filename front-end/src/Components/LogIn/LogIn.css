@@ -69,15 +69,14 @@
   }
  
 
-  button {
+  #login_button {
     cursor: pointer;
     margin-right: 0.25em;
     border: none;
     border-radius: 4px;
     background-color: #83642000;
     color: #fefefe;
-    margin-top: -10px;
-    
+    margin-top: 10px;
   }
   button:hover {
     background-color: #4a4e6900;
