@@ -1,0 +1,15 @@
+.CreatePost {
+  width: 390px;
+  height: 844px;
+  display: flex;
+  justify-content: start;
+  padding: 20px;
+  flex-direction: column;
+}
+
+/* .CreatePost .button {
+padding: 20px;
+color: white;
+border-radius: 10px;
+font-size: 26px;
+}  */

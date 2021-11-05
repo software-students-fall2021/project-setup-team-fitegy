@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+   
+  }
+  #Challenge{
+    width: 390px;
+    height: 844px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+
+}
+#Challenge { 
+    font-family: roboto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    min-width: 100px;
+    min-height: 400px;
+    padding: 20px 40px 40px 40px;
+    border-radius: 6px;
+    margin-top: 100px;
+  }
+  
+  
+  form > h1 {
+    font-display: "roboto";
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    margin-top: -50px;
+    color: rgb(255, 253, 253);
+    letter-spacing: 0px;
+  }
+  
+  .info {
+    padding-bottom: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    
+  }
+  
+  label {
+    margin-bottom: 0.5em;
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
+    font-display: "roboto";
+    
+  }
+  
+  input {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;  
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+  
+  }
+  input, select {
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #d6d1d5;
+    margin-top: 5px;
+  }
+  select {
+    display: block;
+    width: 100%;
+    height: 35px;
+    
+  }
+  input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-top: 2em;
+    margin-right: 10px;
+    
+    
+  }
+  ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+  button {
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    margin-right: 0.25em;
+    
+    border: none;
+    border-radius: 4px;
+    background-color: #22223b00;
+    color: #fefefe;
+    
+  }
+  button:hover {
+    background-color: #4a4e6900;
+    color: #c4bebe;
+  }
+  
+  .error {
+    color:#db2269;
+    font-size: 0.5em;
+    display: relative;
+  }
+  
+  .submit {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  #image{
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    position: absolute;
+    top: 330px;
+    right: 260px;
+  }
+  #cancel{
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+    margin-right: 0.25em;
+    
+    border: none;
+    background-color: #22223b00;
+    color: #fefefe;
+    margin-top: -30px;
+
+  }
+  #cancel:hover {
+    background-color: #4a4e6900;
+    color: #c4bebe;
+  }
+
+  #post_button{
+    position: absolute;
+    margin-top: -30px;
+  }
