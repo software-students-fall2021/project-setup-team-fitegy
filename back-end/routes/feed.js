@@ -7,7 +7,6 @@ const getMockData = async () => {
     await axios
         .get("https://my.api.mockaroo.com/post_data.json?key=44aeded0")
         .then(apiResponse => mockData = apiResponse.data) 
-        .then(() => console.log(mockData))
         .catch(err => next(err)) // pass any errors to express
 
     let newData = mockData.map((post) => {
