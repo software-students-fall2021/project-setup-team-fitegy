@@ -91,6 +91,14 @@ app.post('/post-example', (req, res) => {
   res.json(data)
 })
 
+app.get('/challenge-manager', (req, res) => {
+  res.json({
+    challengeTitle: "Challenge Title",
+    challengeDescription: "Challenge Description",
+    challengeDateRange: "Challenge Date Range"
+  })
+})
+
 // enable file uploads saved to disk in a directory named 'public/uploads'
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
