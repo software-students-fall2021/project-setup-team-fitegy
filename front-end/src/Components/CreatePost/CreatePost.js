@@ -21,7 +21,7 @@ const CreatePost = (props) => {
           <form onSubmit={handleSubmit}>
               <h1>Create Post</h1>
               <button id= "cancel"> Cancel</button>
-              <button>Post</button>
+              <button id="post_b">Post</button>
               <label>
                   Title:
                   <input
@@ -48,7 +48,7 @@ const CreatePost = (props) => {
                   <button onClick={selectPhoto}>Select a Photo</button>
                   </section> */}
                   Photo Selected:
-                  <img id="image" src="https://bidunart.com/wp-content/uploads/2020/06/Portrait446-1280x640.jpg" width="100" height="100"/>
+                  <img id="image" src="https://picsum.photos/200?page=home" width="100" height="100"/>
               </label>
               
   
