@@ -23,6 +23,6 @@ describe('/GET Feed Data', () => {
                 res.body[1].should.have.all.keys(["name", "location", "text"]);
                 res.body[2].should.have.all.keys(["name", "location", "text"]);
             done();
-          });
+          })
     });
 });
