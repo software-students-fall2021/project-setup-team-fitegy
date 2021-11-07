@@ -18,18 +18,23 @@ function App() {
         <BackButton />
         <Title />
         
+        
+        {/*Profile Picture with spacing*/}
         <br></br>
         <Pfp />
         <br></br>
 
         <br></br>
         <br></br>
+        <br></br>
+        {/*TODO, change link to button, add backend to change image, currently links to google for placeholder*/}
         <a href="http://www.google.com"> Change Profile Picture</a>
       </header>
 
 
       <br></br>
       
+      {/*Two flex boxes for the account and profile*/}
       <Account />
       <br></br>
       <Profile />
@@ -39,3 +44,4 @@ function App() {
 }
 
 export default App;
+

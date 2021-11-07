@@ -13,7 +13,7 @@ function Profile(){
 
             <body className="container">
                 <p><a href="http://www.google.com"> Change Password</a></p>
-                <hr></hr>
+             
                 <p><a href="http://www.google.com"> Blocked Users</a></p>
             </body>
 

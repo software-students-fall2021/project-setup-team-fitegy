@@ -9,10 +9,14 @@
   text-align: left;
 }
 
+.title{
+  text-align: center;
+}
+
 .pfp {
-  border: 2px solid black;
+  border: 2px solid grey;
   display: flex;
-  border-radius: 15px;
+  border-radius: 50%;
   width: 50px;
   overflow: hidden;
   float: right;
@@ -21,11 +25,18 @@
 }
 
 .container{
+  /* Sets flex box*/
   display: flex;
   flex-direction: column;
-  background-color: lightgrey;
+
+  /* Background Blue*/
+  background-color: #ffffff10;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  /* Sets the border and centers text and box*/
   border-radius: 15px;
-  border: 2px solid gray;
+  border: 1px solid gray;
   text-align: center;
   
   margin-left: 50px;

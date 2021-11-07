@@ -13,11 +13,11 @@ function Account(){
 
             <body className="container">
                 <p> Name: Jane Doe </p>
-                <hr></hr>
+           
                 <p>Username: Jane1</p>
-                <hr></hr>
+         
                 <p>Email: jane@fitegy.com </p>
-                <hr></hr>
+         
                 <p>Biography: Lorem Ipsum</p>
             </body>
 

@@ -7,6 +7,7 @@ function Title(){
         <div className="title"> 
 
             <h1>Settings</h1>
+        
 
         </div>
     );

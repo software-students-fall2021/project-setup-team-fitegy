@@ -8,7 +8,10 @@ const multer = require('multer') // middleware to handle HTTP POST requests with
 const axios = require('axios') // middleware for making requests to APIs
 require('dotenv').config({ silent: true }) // load environmental variables from a hidden file named .env
 const morgan = require('morgan') // middleware for nice logging of incoming HTTP requests
+const PORT = process.env.PORT || 3001
+const cors = require('cors')
 
+app.use(cors())
 /**
  * Typically, all middlewares would be included before routes
  * In this file, however, most middlewares are after most routes
@@ -27,8 +30,11 @@ app.use('/static', express.static('public'))
 
 // route for HTTP GET requests to the root document
 app.get('/', (req, res) => {
-  res.send('Hello!')
+  res.send("Hello!")
 })
+
+app.use("/api/feed", require("./routes/feed.js"))
+
 
 // route for HTTP GET requests to /html-example
 app.get('/html-example', (req, res) => {
