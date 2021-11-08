@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import './SelectPhoto.css'
-
+// import ImagePicker from "react-native-image-picker";
+import { render } from '@testing-library/react';
 const SelectPhoto= (props) => {
     return (
-      <div className="SelectPhoto">
+      <div className="SelectPhoto" style={{ backgroundImage: "url('/images/background.png')" }}>
           <h1>All Photos</h1>
-        <section className="select">
-        </section>
         <button onClick={selectPhoto}>Select</button>
       </div>
     )
@@ -14,7 +13,4 @@ const SelectPhoto= (props) => {
   function selectPhoto() {
     alert('Should jump to select a photo page!');
   }
-
- 
-// make this function available to be imported into another module
 export default SelectPhoto
