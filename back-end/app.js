@@ -34,6 +34,7 @@ app.get('/', (req, res) => {
 })
 
 app.use("/api/feed", require("./routes/feed.js"))
+app.use("/api/challenge", require("./routes/challenge.js"))
 
 
 // route for HTTP GET requests to /html-example
@@ -95,14 +96,6 @@ app.post('/post-example', (req, res) => {
   }
   // ... then send a response of some kind to client
   res.json(data)
-})
-
-app.get('/challenge-manager', (req, res) => {
-  res.json({
-    challengeTitle: "Challenge Title",
-    challengeDescription: "Challenge Description",
-    challengeDateRange: "Challenge Date Range"
-  })
 })
 
 // enable file uploads saved to disk in a directory named 'public/uploads'
