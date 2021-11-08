@@ -34,6 +34,7 @@ app.get('/', (req, res) => {
 })
 
 app.use("/api/feed", require("./routes/feed.js"))
+app.use("/api/challenge", require("./routes/challenge.js"))
 app.use("/api/notifications", require("./routes/notification.js"))
 app.use("/api/createChallenge", require("./routes/createChallenge.js"))
 
