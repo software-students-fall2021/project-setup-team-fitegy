@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./createChallenge.css"
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 
 const CreateChallenge = () =>{
@@ -10,6 +11,7 @@ const CreateChallenge = () =>{
     const [isPrivate, setPrivate] = React.useState(false);
 
     const handleSubmit = (event) => {
+        
         console.log(`
         Challenge Name: ${name}
         Description: ${description}
@@ -24,9 +26,9 @@ const CreateChallenge = () =>{
 
   return (
     <div id="Challenge" style={{ backgroundImage: "url('/images/background.png')" }}>
-        <form onSubmit={handleSubmit}>
+        <form method="POST" action="/createChallenge" onSubmit={handleSubmit}>
             <h1>Create Challenge</h1>
-            <button id= "cancel" > Cancel</button>
+            <button id= "cancel" component={Link} to="/createNew"> Cancel</button>
             <button id="post_button">Post</button>
             <label>
                 Challenge Name:
