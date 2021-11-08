@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 
 app.use("/api/feed", require("./routes/feed.js"))
 app.use("/api/challenge", require("./routes/challenge.js"))
-
+app.use("/api/notifications", require("./routes/notification.js"))
 
 // route for HTTP GET requests to /html-example
 app.get('/html-example', (req, res) => {

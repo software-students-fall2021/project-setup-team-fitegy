@@ -13,14 +13,17 @@ import LogIn from "./Components/LogIn/logIn.js";
 import NotificationPage from "./Components/NotificationPage/NotificationPage.js";
 import { Login } from "@mui/icons-material";
 import Challenge from "./Components/ChallengeforProfile/ChallengeforProfile";
-
+import NavBar from "./Components/NavBar/navBar";
 function App() {
   return (
     <Router>
         <nav>
           <ul>
-            <li>
+          <li>
               <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/navBar">Navigation</Link>
             </li>
             <li>
               <Link to="/feed">Feed</Link>
@@ -38,6 +41,9 @@ function App() {
               <Link to="/challenge-manager">Challenge Manager</Link>
             </li>
             <li>
+              <Link to="/CreateNew">Create New</Link>
+            </li>
+            <li>
               <Link to="/create-post">Create Post</Link>
             </li>
             <li>
@@ -45,9 +51,11 @@ function App() {
             </li>
           </ul>
         </nav>
-
+      <NavBar />
       <div id="screen">
         <Switch>
+          <Route path="/CreateNew" component={CreateNew} />
+          <Route path ="/navBar" component={NavBar}/>
           <Route path="/login" component={LogIn} />
           <Route path="/feed" component={Feed} />
           <Route path="/notification-page" component={NotificationPage} />
