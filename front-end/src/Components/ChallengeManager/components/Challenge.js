@@ -41,7 +41,7 @@ const Challenge = (props) => {
             gridTemplateRows: "repeat(1, 1fr)",
           }}
         >
-          <ShieldIcon/>
+          {props.mainIcon}
           <Box sx={{ fontWeight: "bold", mt: 1 }}>{props.title}</Box>
           <Box
             sx={{
@@ -49,8 +49,13 @@ const Challenge = (props) => {
               mt: 1,
             }}
           >
-            <DirectionsBikeIcon sx={{ fontSize: "small" }} />
-            <EmojiEventsIcon sx={{ fontSize: "small" }} />
+            <div sx={{ fontSize: "small" }}>
+              {props.subIcon[0]}
+              </div>
+            <div sx={{ fontSize: "small" }}>
+              {props.subIcon}
+              </div>
+            
           </Box>
           <Box sx={{ fontSize: 10, my: 1 }}>{props.description}</Box>
           <Box sx={{ fontSize: 10, mt: 1, mb: 2 }}>{props.dateRange}</Box>

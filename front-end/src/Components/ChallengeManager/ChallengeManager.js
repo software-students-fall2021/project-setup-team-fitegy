@@ -11,7 +11,7 @@ const ChallengeManager = () => {
 
   const getChallenges = challenge.map((challenge) => {
     return <Challenge key={challenge.name} title={challenge.title} description={challenge.description}
-    date={challenge.dateRange} />;
+    date={challenge.dateRange} mainIcon={challenge.mainIcon} subIcon={challenge.subIcon}/>;
   });
 
   useEffect(() => {
@@ -19,7 +19,6 @@ const ChallengeManager = () => {
     .then(res => res.json())
     .then(data => setChallenges(data))
   }, [])
-  console.log(challenge)
   
   return (
     <>
