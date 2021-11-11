@@ -11,22 +11,35 @@ const CreateChallenge = () =>{
     const [isPrivate, setPrivate] = React.useState(false);
 
     const handleSubmit = (event) => {
-        
+
+        event.preventDefault();
         console.log(`
         Challenge Name: ${name}
         Description: ${description}
         Topic: ${topic}
         Dates: ${date}
         Set Private: ${isPrivate}
-
         `);
-    
-    event.preventDefault();
+
+        fetch('http://localhost:3001/api/createChallenge', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: name,
+                descriptioin: description,
+                topic: topic,
+                date: date,
+                private: isPrivate
+            }),
+            })
+            .then(res => console.log(res.status))
     }
 
   return (
     <div id="Challenge" style={{ backgroundImage: "url('/images/background.png')" }}>
-        <form method="POST" action="/createChallenge" onSubmit={handleSubmit}>
+        <form method="POST" action='http://localhost:3001/api/feed' onSubmit={handleSubmit}>
             <h1>Create Challenge</h1>
             <button id= "cancel" component={Link} to="/createNew"> Cancel</button>
             <button id="post_button">Post</button>
