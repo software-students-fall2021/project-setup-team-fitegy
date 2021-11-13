@@ -2,29 +2,46 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
-router.get("/", (req, res) => {
+let mockData;
+const getMockData = async () => {
+    await axios
+        .get("https://my.api.mockaroo.com/myapi.json?key=aea8ef40")
+        .then(apiResponse => mockData = apiResponse.data) 
+        //.catch(err => next(err)) // pass any errors to express
+
+    let newData = mockData.map((data) => {
+        return {"title": data.title, "description": data.description, "dateStart": data.dateStart, "dateEnd": data.dateEnd}
+    })
+    return newData
+}
+
+router.get("/", async (req, res) => {
+  let newData = await getMockData();
+  console.log(newData)
   res.json([
     {
-      title: "Run for 10 days",
-      description: "Run for 10 days in a row to win this challenge",
-      dateRange: "10/2/2021-12/30/2021",
+      title: newData[0].title,
+      description: newData[0].description,
+      dateStart: newData[0].dateStart,
+      dateEnd: newData[0].dateEnd,
       mainIcon: "ShieldIcon",
       subIcon: ["DirectionsBikeIcon", "EmojiEventsIcon"],
     },
 
     {
-      title: "Swim 100 laps",
-      description: "Swim 100 laps in 5 days to win this challenge",
-      dateRange: "11/2/2021-11/30/2021",
+      title: newData[1].title,
+      description: newData[1].description,
+      dateStart: newData[1].dateStart,
+      dateEnd: newData[1].dateEnd,
       mainIcon: "ShieldIcon",
       subIcon: ["DirectionsBikeIcon", "EmojiEventsIcon"],
     },
 
     {
-      title: "Lift weights for 3 days",
-      description:
-        "Lift weights at the gym 3 days in a row to win this challenge",
-      dateRange: "10/2/2021-10/15/2021",
+      title: newData[2].title,
+      description: newData[2].description,
+      dateStart: newData[2].dateStart,
+      dateEnd: newData[2].dateEnd,
       mainIcon: "ShieldIcon",
       subIcon: ["DirectionsBikeIcon", "EmojiEventsIcon"],
     },

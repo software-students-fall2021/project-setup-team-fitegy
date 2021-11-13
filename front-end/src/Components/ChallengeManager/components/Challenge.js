@@ -58,7 +58,7 @@ const Challenge = (props) => {
             
           </Box>
           <Box sx={{ fontSize: 10, my: 1 }}>{props.description}</Box>
-          <Box sx={{ fontSize: 10, mt: 1, mb: 2 }}>{props.dateRange}</Box>
+          <Box sx={{ fontSize: 10, mt: 1, mb: 2 }}>{props.dateStart} - {props.dateEnd}</Box>
         </Box>
 
         <Button
