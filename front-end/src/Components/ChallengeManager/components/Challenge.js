@@ -1,9 +1,6 @@
 import React from "react";
 import { Box, Button, Card } from "@mui/material";
-import { useState, useEffect } from "react";
-import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
-import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
-import ShieldIcon from "@mui/icons-material/Shield";
+import { useState } from "react";
 import CheckIcon from "@mui/icons-material/Check";
 
 const Challenge = (props) => {
