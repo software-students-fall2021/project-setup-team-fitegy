@@ -11,7 +11,7 @@ const ChallengeManager = () => {
 
   const getChallenges = challenge.map((challenge) => {
     return <Challenge key={challenge.name} title={challenge.title} description={challenge.description}
-    date={challenge.dateRange} mainIcon={challenge.mainIcon} subIcon={challenge.subIcon}/>;
+    dateStart={challenge.dateStart} dateEnd={challenge.dateEnd} mainIcon={challenge.mainIcon} subIcon={challenge.subIcon}/>;
   });
 
   useEffect(() => {
