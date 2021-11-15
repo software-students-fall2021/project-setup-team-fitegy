@@ -49,13 +49,14 @@ const Post = (props) => {
       fetch('http://localhost:3001/api/liked', {
         method: "POST",
         headers: {
-          'Content-type': 'application/string'
+          'Content-type': 'application/json'
         },
-        body: "Here is one like!"
-      })
-      .then((result) => {
-        console.log(result.status)
-      })
+        body: JSON.stringify({
+          text: "one like coming!"
+          }),
+        })
+        .then(response => response.json())
+        .then(data => console.log(data.text));
     };
 
 

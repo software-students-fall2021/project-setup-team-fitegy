@@ -15,7 +15,7 @@ router.post("/", (req, res) => {
     // now do something amazing with this data...
     // ... then send a response of some kind
     console.log(req.body);
-    res.send("User Input Received");
+    res.send({text: "User Input Received"});
   })
 
 

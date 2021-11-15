@@ -8,8 +8,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 router.post("/", (req, res) => {
-    console.log(req.body);
-    res.send("Like Received!");
+    console.log(req.body.text);
+    res.send({text:'Like received!'});
   })
 
 module.exports = router;
