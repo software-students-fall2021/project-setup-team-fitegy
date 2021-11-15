@@ -4,7 +4,7 @@ const chaiHttp = require('chai-http');
 chai.should()
 chai.use(chaiHttp);
 
-describe('/GET Feed Data', () => {
+describe('/GET Challenge Data', () => {
     it('should return an array of objects', (done) => {
       chai.request(server)
           .post('/api/createChallenge')
