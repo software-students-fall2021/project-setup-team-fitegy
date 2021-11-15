@@ -8,15 +8,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 router.post("/", (req, res) => {
-    const name = req.body.name
-    const topic = req.body.topic
-    const dates = req.body.date
-    const isPrivate = req.body.isPrivate
-    // now do something amazing with this data...
-    // ... then send a response of some kind
-    console.log(req.body);
-    res.send({text: "User Input Received"});
+    console.log(req.body.text);
+    res.send({text:'Like received!'});
   })
-
 
 module.exports = router;

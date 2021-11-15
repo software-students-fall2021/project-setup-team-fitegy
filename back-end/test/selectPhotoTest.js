@@ -7,12 +7,12 @@ chai.use(chaiHttp);
 describe('/PUT file', () => {
     it('Should PUT a file', (done) => {
         let file = {
-            fileName: "test.png",
+            fileName: "test.jpg",
         }
         chai.request(server)
-            .put('/user/files/')
-            .field('fileName', 'test.png')
-            // .attach('files', "/Users/Downloads/test.png")
+            .put('/public/images')
+            .field('fileName', 'test.jpg')
+            // .attach('files', "/Users/Downloads/test.jpg")
             .send(file)
             .end((err, res) => {
                 if (err) {
