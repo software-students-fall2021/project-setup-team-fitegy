@@ -38,6 +38,8 @@ app.use("/api/challenge", require("./routes/challenge.js"))
 app.use("/api/notifications", require("./routes/notification.js"))
 app.use("/api/createChallenge", require("./routes/createChallenge.js"))
 app.use("/api/profile", require("./routes/profile.js"))
+app.use("/api/createPost", require("./routes/createPost.js"))
+app.use("/api/uploadPhoto", require("./routes/router.js"))
 
 
 
