@@ -10,7 +10,7 @@ describe('/PUT file', () => {
             fileName: "test.png",
         }
         chai.request(server)
-            .put('/user/files/')
+            .put('/public/images')
             .field('fileName', 'test.png')
             // .attach('files', "/Users/Downloads/test.png")
             .send(file)
