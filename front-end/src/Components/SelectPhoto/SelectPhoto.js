@@ -15,7 +15,7 @@ const [pictures, setPictures] = useState([]);
     setPictures([...pictures, picture]);
   };
   return (
-    <ImageUploader
+    <ImageUploader 
       {...props}
       withIcon={true}
       onChange={onDrop}

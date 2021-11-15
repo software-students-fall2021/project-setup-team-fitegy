@@ -35,10 +35,31 @@ function stringAvatar(name) {
 
 
 const Post = (props) => {
+
+    var liked = false;
     const [count, setCount] = useState(0); 
     const handleClick = e => {
-      setCount(count + 1);
+      if(liked == false){
+        setCount(count + 1);
+        liked = true;
+      }
+      console.log("liked!");
+
+      // send data to the back
+      fetch('http://localhost:3001/api/liked', {
+        method: "POST",
+        headers: {
+          'Content-type': 'application/string'
+        },
+        body: "Here is one like!"
+      })
+      .then((result) => {
+        console.log(result.status)
+      })
     };
+
+
+
     return (
       <div id="post">
           <div id="top_profile">
@@ -66,7 +87,7 @@ const Post = (props) => {
             </div>
             <div id="check_challenge" className="icon_container">
               <img className="icon" width="20" height="20" src="/images/light.png" />
-              <span> See Challenge </span>
+              <span> Join Challenge </span>
             </div>
           </div>
 
