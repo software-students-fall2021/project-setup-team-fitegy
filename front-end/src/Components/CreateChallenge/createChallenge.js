@@ -34,7 +34,8 @@ const CreateChallenge = () =>{
                 private: isPrivate
             }),
             })
-            .then(res => console.log(res.status))
+            .then(response => response.json())
+            .then(data => console.log(data.text));
     }
 
   return (

@@ -29,6 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // decode url-encoded incomi
 app.use("/static", express.static("public"));
 
 // route for HTTP GET requests to the root document
+
 app.get("/", (req, res) => {
   res.send("Hello!");
 });
@@ -41,6 +42,7 @@ app.use("/api/profile", require("./routes/profile.js"));
 app.use("/api/createPost", require("./routes/createPost.js"));
 app.use("/api/uploadPhoto", require("./routes/router.js"));
 app.use("/api/joined", require("./routes/joined"));
+app.use("/api/liked", require("./routes/countLikes.js"));
 
 // export the express app we created to make it available to other modules
 module.exports = app; // CommonJS export style
