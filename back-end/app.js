@@ -46,17 +46,6 @@ app.use("/api/joined", require("./routes/joined"));
 app.use("/api/liked", require("./routes/countLikes.js"));
 //app.use("/api/settings", require("./routes/settings.js"));
 
-// mongoose
-
-mongoose.connect("mongodb://localhost/fitegy",{
-  useNewUrlParse: true,
-  useUnifiedTopology: true
-});
-
-mongoose.connection.on("connected", ()=>{
-  console.log("Mongoose is connected!");
-})
-
 
 
 // export the express app we created to make it available to other modules
