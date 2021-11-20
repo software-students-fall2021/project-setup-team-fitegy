@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import CreateNew from "./Components/CreateNew/createNew.js";
 import ProfileBar from "./Components/ProfileBar/ProfileBar.js";
@@ -17,45 +17,45 @@ import NavBar from "./Components/NavBar/navBar";
 function App() {
   return (
     <Router>
-        <nav>
-          <ul>
+      <nav>
+        <ul>
           <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/navBar">Navigation</Link>
-            </li>
-            <li>
-              <Link to="/feed">Feed</Link>
-            </li>
-            <li>
-              <Link to="/notification-page">Notification Page</Link>
-            </li>
-            <li>
-              <Link to="/profile">Profile Page</Link>
-            </li>
-            <li>
-              <Link to="/create-challenge">Create Challenge</Link>
-            </li>
-            <li>
-              <Link to="/challenge-manager">Challenge Manager</Link>
-            </li>
-            <li>
-              <Link to="/CreateNew">Create New</Link>
-            </li>
-            <li>
-              <Link to="/create-post">Create Post</Link>
-            </li>
-            <li>
-              <Link to="/select-photo">Select Photo</Link>
-            </li>
-          </ul>
-        </nav>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/navBar">Navigation</Link>
+          </li>
+          <li>
+            <Link to="/feed">Feed</Link>
+          </li>
+          <li>
+            <Link to="/notification-page">Notification Page</Link>
+          </li>
+          <li>
+            <Link to="/profile">Profile Page</Link>
+          </li>
+          <li>
+            <Link to="/create-challenge">Create Challenge</Link>
+          </li>
+          <li>
+            <Link to="/challenge-manager">Challenge Manager</Link>
+          </li>
+          <li>
+            <Link to="/CreateNew">Create New</Link>
+          </li>
+          <li>
+            <Link to="/create-post">Create Post</Link>
+          </li>
+          <li>
+            <Link to="/select-photo">Select Photo</Link>
+          </li>
+        </ul>
+      </nav>
       <NavBar />
       <div id="screen">
         <Switch>
           <Route path="/CreateNew" component={CreateNew} />
-          <Route path ="/navBar" component={NavBar}/>
+          <Route path="/navBar" component={NavBar} />
           <Route path="/login" component={LogIn} />
           <Route path="/feed" component={Feed} />
           <Route path="/notification-page" component={NotificationPage} />

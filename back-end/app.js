@@ -10,7 +10,7 @@ require("dotenv").config({ silent: true }); // load environmental variables from
 const morgan = require("morgan"); // middleware for nice logging of incoming HTTP requests
 const PORT = process.env.PORT || 3001;
 const cors = require("cors");
-const mongoose = require("mongoose");
+require("../back-end/db.js");
 
 app.use(cors());
 /**
