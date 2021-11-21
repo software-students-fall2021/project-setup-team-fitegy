@@ -32,7 +32,7 @@ app.use("/static", express.static("public"));
 // route for HTTP GET requests to the root document
 
 app.get("/", (req, res) => {
-  res.send("Hello!");
+  res.send("Hello! This is the server for Fitegy.");
 });
 
 app.use("/api/feed", require("./routes/feed.js"));
@@ -44,6 +44,9 @@ app.use("/api/createPost", require("./routes/createPost.js"));
 app.use("/api/uploadPhoto", require("./routes/router.js"));
 app.use("/api/joined", require("./routes/joined"));
 app.use("/api/liked", require("./routes/countLikes.js"));
+//app.use("/api/settings", require("./routes/settings.js"));
+
+
 
 // export the express app we created to make it available to other modules
 module.exports = app; // CommonJS export style
