@@ -12,32 +12,17 @@ describe("/GET Challenge Data", () => {
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a("array");
-        res.body.length.should.be.eql(3);
-        res.body[0].should.be.an("object");
-        res.body[1].should.be.an("object");
-        res.body[2].should.be.an("object");
-        res.body[0].should.have.all.keys([
-          "title",
-          "description",
-          "dateRange",
-          "mainIcon",
-          "subIcon",
-        ]);
-        res.body[1].should.have.all.keys([
-          "title",
-          "description",
-          "dateRange",
-          "mainIcon",
-          "subIcon",
-        ]);
-        res.body[2].should.have.all.keys([
-          "title",
-          "description",
-          "dateRange",
-          "mainIcon",
-          "subIcon",
-        ]);
-
+        res.body.map((ele) => {
+          ele.should.be.an("object");
+          ele.should.have.all.keys([
+            "title",
+            "description",
+            "dateStart",
+            "dateEnd",
+            "mainIcon",
+            "subIcon",
+          ])
+        });
         done();
       });
   });
