@@ -11,6 +11,7 @@ const morgan = require("morgan"); // middleware for nice logging of incoming HTT
 const PORT = process.env.PORT || 3001;
 const cors = require("cors");
 require("../back-end/db.js");
+require('dotenv').config();
 
 app.use(cors());
 /**
