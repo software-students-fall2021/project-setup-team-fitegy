@@ -35,7 +35,6 @@ function stringAvatar(name) {
 
 
 const Post = (props) => {
-
     var liked = false;
     const [count, setCount] = useState(0); 
     const handleClick = e => {
