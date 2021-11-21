@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-/* // Define Schema for each challenge
+// Define Schema for each challenge
 const ChallengeSchema = new mongoose.Schema({
   title: String,
   description: String,
@@ -20,7 +20,7 @@ const ChallengeSchema = new mongoose.Schema({
 // Model for each post
 const Challenge = mongoose.model("Challenge", ChallengeSchema);
 
-// function for saving the data to MongoDB
+/* // function for saving the data to MongoDB
 const SaveChallengeData = async (content) =>{
   // instance of post model
   const challenge1  = new Challenge(data);
