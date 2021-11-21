@@ -8,7 +8,7 @@ const { Schema } = mongoose;
 const MONGODB_URL = "mongodb+srv://fitegy:fitegy2021@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongoose.connect(MONGODB_URL);
 
-const Challenge = mongoose.model("Challenge", ChallengeSchema);
+const Challenge = mongoose.model("Challenge");
 
 /* let mockData;
 const getMockData = async () => {
