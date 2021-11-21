@@ -24,7 +24,7 @@ const getMockData = async () => {
 
 
 // mongoDB 
-const mongoose = require("Mongoose");
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const MONGODB_URL = "mongodb+srv://fitegy:fitegy2021@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongoose.connect(MONGODB_URL);
