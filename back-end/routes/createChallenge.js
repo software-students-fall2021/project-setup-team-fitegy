@@ -8,6 +8,12 @@ const mongoose = require('mongoose');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//mongoDB code 
+
+require('dotenv').config({path:../.env});
+const {Schema}= mongoose;
+const MONGODB_URL = 'mongodb+srv://${provess.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+mongoose.connect(MONGODB_URL);
 
 // Define Schema for each challenge
 const ChallengeSchema = new mongoose.Schema({
@@ -20,7 +26,7 @@ const ChallengeSchema = new mongoose.Schema({
 // Model for each post
 const Challenge = mongoose.model("Challenge", ChallengeSchema);
 
-/* // function for saving the data to MongoDB
+// function for saving the data to MongoDB
 const SaveChallengeData = async (content) =>{
   // instance of post model
   const challenge1  = new Challenge(data);
@@ -34,7 +40,7 @@ const SaveChallengeData = async (content) =>{
           console.log("Data saved to MongoDB!")
       }
   })
-} */
+} 
 
 router.post("/", (req, res) => {
     const name = req.body.name
