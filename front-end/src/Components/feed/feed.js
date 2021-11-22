@@ -6,23 +6,24 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import { BrowserRouter as Link } from "react-router-dom";
 
 const Feed = () => {
-
-    const [content, setContent]  = useState([]);
-    useEffect(()=>{
+  
+  const [content, setContent]  = useState([]);
+  useEffect(()=>{
       fetch('http://localhost:3001/api/feed')
         .then(res => res.json())
-        .then(data => setContent(data));
-    }, [])
-    
-   const userPosts = content.map((post)=>{
-     return <Post name={post.name} location={post.location} content={post.text} id = {post.id} likes = {post.likes}/>
-   })
+        .then(data => setContent(data))
+
+  }, [])
+
+    const userPosts = content.map((post)=>{
+      return <Post name={post.name} location={post.location} content={post.text} id = {post.id} likes = {post.likes}/>
+    })
+
+
     return (
       <div id="feed" style={{ backgroundImage: "url('/images/background.png')" }}>
           <div id="notification">
-            <IconButton component={Link} to="/notification-page" aria-label= "Notifications" color="primary" >
-              <NotificationsNoneIcon />
-            </IconButton>
+            <NotificationsNoneIcon />
           </div>
           {userPosts}
       </div>   

@@ -18,7 +18,6 @@ router.get('/', async (req, res) => {
     const feedPosts = Posts.map((post)=>{
         return {name: post.Name, location: post.Location, text: post.postText, id: post._id, likes: post.Likes}
       })
-    console.log(feedPosts)
     res.json(feedPosts);
 })
 
