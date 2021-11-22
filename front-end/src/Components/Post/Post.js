@@ -36,7 +36,7 @@ function stringAvatar(name) {
 
 const Post = (props) => {
     var liked = false;
-    const [count, setCount] = useState(0); 
+    const [count, setCount] = useState(props.likes); // load all the previous likes from db
     const handleClick = e => {
       if(liked == false){
         setCount(count + 1);
@@ -51,7 +51,8 @@ const Post = (props) => {
           'Content-type': 'application/json'
         },
         body: JSON.stringify({
-          text: "one like coming!"
+          text: "one like coming!",
+          id: props.id
           }),
         })
         .then(response => response.json())

@@ -12,7 +12,7 @@ const Feed = () => {
     }, [])
     
    const userPosts = content.map((post)=>{
-     return <Post name={post.name} location={post.location} content={post.text}/>
+     return <Post name={post.name} location={post.location} content={post.text} id = {post.id} likes = {post.likes}/>
    })
     return (
       <div id="feed" style={{ backgroundImage: "url('/images/background.png')" }}>
