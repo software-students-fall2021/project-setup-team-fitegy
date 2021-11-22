@@ -15,6 +15,7 @@ const getMockData = async () => {
     })
     return newData
 }
+
 router.get('/', async (req, res) => {
     let newData = await getMockData();
     res.json([
