@@ -41,7 +41,8 @@ mongoose.connection.on("connected", ()=>{
 const PostSchema = new Schema({
   Name: String,
   Location: String,
-  postText: String
+  postText: String, 
+  Likes: Number
 });
 
 // Model for each post
@@ -56,7 +57,8 @@ const SavePostData = async (content) =>{
     const data= {
         Name: newData[0].name,
         Location: newData[0].location,
-        postText: content
+        postText: content, 
+        Likes: 0
     }
 
     // instance of post model
