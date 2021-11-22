@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from "react";
 import "./feed.css"
 import Post from "../Post/Post.js"
+import IconButton from '@mui/material/IconButton';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import { BrowserRouter as Link } from "react-router-dom";
 
 const Feed = () => {
 
@@ -17,7 +20,9 @@ const Feed = () => {
     return (
       <div id="feed" style={{ backgroundImage: "url('/images/background.png')" }}>
           <div id="notification">
-            <img src="/images/bell.png" />
+            <IconButton component={Link} to="/notification-page" aria-label= "Notifications" color="primary" >
+              <NotificationsNoneIcon />
+            </IconButton>
           </div>
           {userPosts}
       </div>   
