@@ -24,9 +24,10 @@ const getMockData = async () => {
 
 
 // mongoDB 
+require('dotenv').config({path:'../.env'});
 const mongoose = require("Mongoose");
 const { Schema } = mongoose;
-const MONGODB_URL = "mongodb+srv://fitegy:fitegy2021@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 mongoose.connect(MONGODB_URL);
 
 // check if mongoose is connected to MongoDB
@@ -40,7 +41,8 @@ mongoose.connection.on("connected", ()=>{
 const PostSchema = new Schema({
   Name: String,
   Location: String,
-  postText: String
+  postText: String, 
+  Likes: Number
 });
 
 // Model for each post
@@ -55,7 +57,8 @@ const SavePostData = async (content) =>{
     const data= {
         Name: newData[0].name,
         Location: newData[0].location,
-        postText: content
+        postText: content, 
+        Likes: 0
     }
 
     // instance of post model
