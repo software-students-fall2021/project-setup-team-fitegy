@@ -10,11 +10,25 @@ const CreatePost = (props) => {
     const handleSubmit = (event) => {
         console.log(`
         Post Title: ${title}
-        dESsetDescription: ${content}
+        Content: ${content}
         Set Private: ${isPrivate}
         `);
     
-    event.preventDefault();
+        event.preventDefault();
+        fetch('http://localhost:3001/api/createPost', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                title: title,
+                content: content,
+                private: isPrivate
+            }),
+            })
+            .then(response => response.json())
+            .then(data => console.log(data.text));
+    
     }
     return (
       <div id="CreatePost" style={{ backgroundImage: "url('/images/background.png')" }}>

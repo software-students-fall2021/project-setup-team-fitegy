@@ -10,28 +10,9 @@ const Feed = () => {
         .then(res => res.json())
         .then(data => setContent(data));
     }, [])
-     /*
-    useEffect(()=>{
-      const getPost = async() =>{
-        const response = await fetch('http://localhost:3001/api/');
-        const postsdata = await response.json();
-        setContent(postsdata);
-      };
-      getPost();
-    }, []);
-
-    let content = [];
-    async function getPost(){
-        const response = await fetch('http://localhost:3001/api/');
-        content = await response.json();
-        return content;
-      }
-    getPost().then(content=>{
-      console.log(content);;
-    })
-    */
+    
    const userPosts = content.map((post)=>{
-     return <Post name={post.name} location={post.location} content={post.text}/>
+     return <Post name={post.name} location={post.location} content={post.text} id = {post.id} likes = {post.likes}/>
    })
     return (
       <div id="feed" style={{ backgroundImage: "url('/images/background.png')" }}>
