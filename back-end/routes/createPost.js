@@ -24,8 +24,8 @@ const getMockData = async () => {
 
 
 // mongoDB 
-const mongoose = require("mongoose");
 require('dotenv').config({path:'../.env'});
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 mongoose.connect(MONGODB_URL);
@@ -79,8 +79,8 @@ const SavePostData = async (content) =>{
 // express code
 router.post("/", async (req, res) => {
     //const title = req.body.title
-    const content = req.body.content
-    const isPrivate = req.body.isPrivate
+    const content = req.body.content;
+    const isPrivate = req.body.isPrivate;
     SavePostData(req.body.content);
     console.log(req.body);
     res.send({text: "User Input Received"});
