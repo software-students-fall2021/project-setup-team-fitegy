@@ -75,22 +75,23 @@ const SavePostData = async (content) =>{
     })
 }
 
-const { body, validationResult } = require('express-validator'); 
+const { check, validationResult } = require('express-validator'); 
 // express code
-router.post("/", async (req, res) => {
+router.post("/", check("content").isByteLength({max: 130}).withMessage("Too long!") ,async (req, res) => {
     //const title = req.body.title
-    const content = req.body.content;
     const isPrivate = req.body.isPrivate;
+    const content = req.body.content;
     
-    body("content").not().isEmpty()
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+        res.send({text: "Invalid Input Type!"});
+        console.log({ errors: errors.array() });
     }
-    
-    SavePostData(req.body.content);
-    console.log(req.body);
-    res.send({text: "User Input Received"});
+    else{
+        SavePostData(content);
+        console.log(req.body);
+        res.send({text: "User Input Received"});
+    }
   })
 
 
