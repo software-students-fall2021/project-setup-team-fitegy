@@ -21,7 +21,7 @@ const Feed = () => {
 
 
     return (
-      <div id="feed" style={{ backgroundImage: "url('/images/background.png')" }}>
+      <div id="feed" style={{ backgroundImage: "url('/images/background.png')", backgroundRepeat: "repeat-y"}}>
           <div id="notification">
             <NotificationsNoneIcon />
           </div>
