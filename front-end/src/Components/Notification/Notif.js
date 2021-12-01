@@ -50,7 +50,7 @@ const Notif = (props) => {
           </div>
 
           <div id="notif_content">
-            <p> {props.content} </p>
+            <p> {props.name} {props.content} </p>
           </div>
 
       </div>

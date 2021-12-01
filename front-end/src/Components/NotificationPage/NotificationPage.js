@@ -13,7 +13,7 @@ const NotificationPage = () => {
       return <Notif name={notif.name} content={notif.text}/>
     })
     return (
-      <div id="notification_page" style={{ backgroundImage: "url('/images/background.png')" }}>
+      <div id="notification_page" style={{ backgroundImage: "url('/images/background.png')", backgroundRepeat: "repeat-y" }}>
          {notifications}
       </div>   
     );
