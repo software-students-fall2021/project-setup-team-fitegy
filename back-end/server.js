@@ -11,9 +11,9 @@ const listener = server.listen(port, function () {
   console.log(`Server running on port: ${port}`)
 })
 app.use(express.static('public'));
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 
-app.use('/upload', router);
+// app.use('/upload', router);
 // a function to stop listening to the port
 const close = () => {
   listener.close()
