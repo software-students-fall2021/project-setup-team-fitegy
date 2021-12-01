@@ -10,9 +10,9 @@ describe('/GET Profile Stats Data', () => {
           .get('/api/profile')
           .end((err, res) => {
                 res.should.have.status(200);
-                res.body.length.should.be.eql(3);
-                res.body.should.be.an("object");
-                res.body.should.have.all.keys(["ongoing", "done", "points"]);
+                res.body.length.should.be.eql(1);
+                res.body.should.be.an("array");
+                res.body[0].should.have.all.keys(["ongoing", "done", "points"]);
             done();
           });
     });

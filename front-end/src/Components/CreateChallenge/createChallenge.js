@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./createChallenge.css"
+import { BrowserRouter as Link } from "react-router-dom";
 
 
 const CreateChallenge = () =>{
@@ -10,23 +11,38 @@ const CreateChallenge = () =>{
     const [isPrivate, setPrivate] = React.useState(false);
 
     const handleSubmit = (event) => {
+
+        event.preventDefault();
         console.log(`
         Challenge Name: ${name}
         Description: ${description}
         Topic: ${topic}
         Dates: ${date}
         Set Private: ${isPrivate}
-
         `);
-    
-    event.preventDefault();
+
+        fetch('http://localhost:3001/api/createChallenge', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: name,
+                descriptioin: description,
+                topic: topic,
+                date: date,
+                private: isPrivate
+            }),
+            })
+            .then(response => response.json())
+            .then(data => console.log(data.text));
     }
 
   return (
     <div id="Challenge" style={{ backgroundImage: "url('/images/background.png')" }}>
-        <form onSubmit={handleSubmit}>
+        <form method="POST" action='http://localhost:3001/api/feed' onSubmit={handleSubmit}>
             <h1>Create Challenge</h1>
-            <button id= "cancel" > Cancel</button>
+            <button id= "cancel" component={Link} to="/createNew"> Cancel</button>
             <button id="post_button">Post</button>
             <label>
                 Challenge Name:
