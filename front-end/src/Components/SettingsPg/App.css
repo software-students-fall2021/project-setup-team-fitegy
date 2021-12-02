@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+  width: 390px;
+  height: 800px;
+  background-image: url("ojbg.png");
+}
+
+.back {
+  text-align: left;
+}
+
+.title{
+  text-align: center;
+}
+
+.pfp {
+  border: 2px solid grey;
+  display: flex;
+  border-radius: 50%;
+  width: 50px;
+  overflow: hidden;
+  float: right;
+  margin-left: 50px;
+  margin-right: 170px;
+}
+
+.container{
+  /* Sets flex box*/
+  display: flex;
+  flex-direction: column;
+
+  /* Background Blue*/
+  background-color: #ffffff10;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  /* Sets the border and centers text and box*/
+  border-radius: 15px;
+  border: 1px solid gray;
+  text-align: center;
+  
+  margin-left: 50px;
+  margin-right: 170px;
+
+  width: 75%;
+  justify-content: center;
+
+}

@@ -1,17 +1,32 @@
-# Project Repository
+[![Fitegy](https://circleci.com/gh/software-students-fall2021/project-setup-team-fitegy.svg?style=shield)](https://app.circleci.com/pipelines/github/software-students-fall2021/project-setup-team-fitegy/61/workflows/d3328b56-d1f9-4d26-b830-b43384ded38c/jobs/119) 
 
-This repository will be used for team projects.
+# Site Map and Wireframes
+Check out our site map and wireframes here: https://github.com/software-students-fall2021/project-setup-team-fitegy/tree/master/ux-design
 
-Several sets of instructions are included in this repository. They should each be treated as separate assignments with their own due dates and sets of requirements.
+# Prototype (Invision)
+https://invis.io/RW11VPGH4MTN
 
-1. Delete the contents of this file and replace with the contents of a proper README.md, as described in the [project setup instructions](./instructions-1a-project-setup.md)
+# Prototype (proto.io)
+We made some other prototypes with further design, texts, images, etc to make the app more realistic on proto.io here: https://pr.to/XDB4B4/
 
-1. See the [Sprint Planning instructions](instructions-1b-sprint-planning.md) for the requirements of Sprint Planning for each Sprint.
+# Project Description
 
-1. See the [Front-End Development instructions](./instructions-2-front-end.md) for the requirements of the initial Front-End Development.
+Fitegy is a social fitness app where users can choose or create their own workout challenges and send challenges to friends. Once users collect points through completing challenges, and can redeem these points for prizes and goods. 
+Our product vision is to create a socially engaging way to stay healthy with friends. It can be difficult to find and maintain the motivation to exercise, and Fitegy strives to be that motivational gym buddy.
 
-1. See the [Back-End Development instructions](./instructions-3-back-end.md) for the requirements of the initial Back-End Development.
+# History
+Fitegy began with the idea that working out alone may be difficult to keep up with for beginners or those motivated by others or by challenges. The idea was proposed by Alex Ko and Cory Dublin to create a social app that keeps friends motivated to stay fit. For more information and how to contribute to our project, please read [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-1. See the [Database Integration instructions](./instructions-4-database.md) for the requirements of integrating a database into the back-end.
+# Core Team Members
+Alex Ko: https://github.com/fyk211 \
+Anona Yang: https://github.com/AnonaYY \
+Christian Kovacs: https://github.com/ckovacs1 \
+Corey Dubin: https://github.com/dubincorey \
+Ina Youn: https://github.com/inayoun \
+Salma Hashem: https://github.com/Salma-Hashem
 
-1. See the [Deployment instructions](./instructions-5-deployment.md) for the requirements of deploying an app.
+# Instructions
+Coming soon.
+
+
+
