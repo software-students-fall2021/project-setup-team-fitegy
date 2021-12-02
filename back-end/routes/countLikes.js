@@ -13,7 +13,6 @@ const getMockData = async () => {
     await axios
         .get("https://my.api.mockaroo.com/random_names.json?key=44aeded0")
         .then(apiResponse => mockData = apiResponse.data) 
-        .then(() => console.log(mockData))
         //.catch(err => next(err)) // pass any errors to express
 
     let newData = mockData.map((notif) => {
@@ -71,7 +70,10 @@ const SaveNotifData = async (text) =>{
 router.post("/", (req, res) => {
     //console.log(req.body.text);
     SaveLikeData(req.body.id);
-    const newNotifText = " liked your post: " + req.body.content
+    let newNotifText = " liked your post: " + req.body.content
+    if (newNotifText.length >= 130){
+      newNotifText = newNotifText.substring(0, 90) + "..."
+    }
     SaveNotifData(newNotifText)
     res.send({text:'Like received!'});
   })
