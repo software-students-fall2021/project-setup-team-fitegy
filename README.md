@@ -1,4 +1,4 @@
-[![Fitegy](https://circleci.com/gh/fitegy/software-students-fall2021/project-setup-team-fitegy.svg?style=svg)](https://app.circleci.com/pipelines/github/software-students-fall2021/project-setup-team-fitegy/61/workflows/d3328b56-d1f9-4d26-b830-b43384ded38c/jobs/119) 
+[![Fitegy](https://circleci.com/gh/software-students-fall2021/project-setup-team-fitegy.svg?style=svg)](https://app.circleci.com/pipelines/github/software-students-fall2021/project-setup-team-fitegy/61/workflows/d3328b56-d1f9-4d26-b830-b43384ded38c/jobs/119) 
 
 # Site Map and Wireframes
 Check out our site map and wireframes here: https://github.com/software-students-fall2021/project-setup-team-fitegy/tree/master/ux-design
