@@ -21,7 +21,7 @@
 
 ## Daily Standups
 
-<p>Daily standups will occur according to the schedule on the Knowledge Kitchen calendar. Meeting time will be decided according to the team's schedule for optimal time use. Members will be present synchronously. Members will not cover for other members, and those who make no progress for two or more standups in a row will be reported to management.</p>
+<p>Daily standups will occur according to the schedule on the Knowledge Kitchen calendar. Meeting time will be decided according to the team's schedule for optimal time use. Members will be present synchronously. Members will not cover for other members, and those who make no progress for two or more standups in a row will be reported to management. Daily standups take place in person at the Laguardia coop.</p>
 
 ## Coding Standards
 

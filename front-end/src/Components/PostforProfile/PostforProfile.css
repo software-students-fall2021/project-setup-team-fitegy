@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap');
+
+
+#postfp{
+    background-color: white;
+    width: 320px;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    box-shadow: 5px 10px 20px rgb(129, 129, 129);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+#top_profilefp{
+    display: flex;
+    padding-left: 10px;
+}
+
+#avatarfp{
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    flex-grow: 0.5;
+}
+
+#detailsfp {
+    
+    margin-left: 10px;
+    height: 40px;
+    line-height: 10%;
+    font-family: 'Open Sans', sans-serif;;
+    flex-grow: 50;
+}
+
+
+.namefp{
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.locationfp{
+    font-size: 10px;
+    color:rgb(156, 156, 156);
+}
+
+#dividerfp{
+    margin-top: 10px;;
+}
+
+#contentfp{
+    flex-grow: 2;
+    font-family: sans-serif;
+    padding: 7px;
+}
+
+#bottom_barfp{
+    flex-grow: 0.2;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icon_containerfp{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+    color: rgb(141, 141, 141);
+    opacity: 0.6;
+}
+#likefp:hover, #commentfp:hover, #check_challengefp:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#like_iconfp{
+    opacity: 0.5;
+}
+
+#commentfp{
+    flex-grow: 1;
+    flex-wrap: wrap;
+
+}
+
+#check_challengefp{
+    flex-grow: 1;
+}
+
+#iconfp{
+   justify-content: center;
+}
