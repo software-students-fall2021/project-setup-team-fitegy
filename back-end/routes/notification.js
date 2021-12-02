@@ -16,21 +16,54 @@ const getMockData = async () => {
     return newData
 }
 
-router.get('/', async (req, res) => {
+// mongoDB 
+require('dotenv').config({path:'../.env'});
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
+const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+mongoose.connect(MONGODB_URL);
+
+// Define Schema for each notification
+const NotifSchema = new Schema({
+    Name: String,
+    Text: String
+  });
+  
+// Model for each notification
+const Notif = mongoose.model("Notif", NotifSchema);
+
+
+// function for saving the data to MongoDB
+const SaveNotifData = async (text) =>{
+
+    // create data
     let newData = await getMockData();
-    res.json([
-        {name: newData[0].name, text: newData[0].name + " liked your post: Daily challenge completed with..."},
-        {name: newData[1].name, text: newData[1].name + " commented: keep up the good work💪"},
-        {name: newData[2].name, text: newData[2].name + " liked your post: Daily challenge completed with..."},
-        {name: newData[3].name, text: newData[3].name + " commented: very nice job! Can I join you guys?"},
-        {name: newData[4].name, text: newData[4].name + " commented: I tried your challenge last time and it was amazing! But now CAN YOU do my challenge?😈"},
-        {name: newData[5].name, text: newData[5].name + " liked your post: Daily challenge completed with..."},
-        {name: newData[6].name, text: newData[6].name + " commented: amazing!"},
-        {name: newData[7].name, text: newData[7].name + " started following you!"},
-        {name: newData[8].name, text: newData[8].name + " commented: Wow that was a killer workout! Mind if I copy yours?"},
-        {name: newData[9].name, text: newData[9].name + " started following you!"}
-    ]
-  );
+    const data= {
+        Name: newData[0].name,
+        Text: text, 
+    }
+
+    // instance of post model
+    const Notif1  = new Notif(data);
+
+    // save this post to database
+    Notif1.save((error) =>{
+        if(error){
+            console.log("Oops something went wrong!")
+        }
+        else{
+            console.log("Data saved to MongoDB!")
+        }
+    })
+}
+
+
+router.get('/', async (req, res) => {
+    const Notifs = await Notif.find();
+    const allNotifs = Notifs.map((notif)=>{
+        return {name: notif.Name, text: notif.Text}
+      })
+    res.json(allNotifs);
 })
 
 module.exports = router;
