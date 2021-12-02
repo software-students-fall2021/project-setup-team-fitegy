@@ -4,12 +4,13 @@ const axios = require("axios");
 require("./createPost.js")
 
 
+// mongoDB 
+require('dotenv').config({path:'../.env'});
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const MONGODB_URL = "mongodb+srv://fitegy:fitegy2021@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 mongoose.connect(MONGODB_URL);
 
-const Post = mongoose.model("Post");
 
 
 router.get("/", async (req, res) => {

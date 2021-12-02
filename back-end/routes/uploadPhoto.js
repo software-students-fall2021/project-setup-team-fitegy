@@ -2,18 +2,18 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
 const app = express();
-const mongoose = require('mongoose');
 
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //mongoDB code 
-
-require('dotenv').config({path:'../.env'})
-const {Schema}= mongoose;
-const MONGODB_URL = 'mongodb+srv://${provess.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+require('dotenv').config({path:'../.env'});
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
+const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 mongoose.connect(MONGODB_URL);
+
 
 var imageSchema = new mongoose.Schema({
     name: String,
