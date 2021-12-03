@@ -2,36 +2,37 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
 const app = express();
-const mongoose = require('mongoose');
 
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//mongoDB code 
-
-require('dotenv').config({path:../.env});
-const {Schema}= mongoose;
-const MONGODB_URL = 'mongodb+srv://${provess.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+// mongoDB 
+require('dotenv').config({path:'../.env'});
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
+const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 mongoose.connect(MONGODB_URL);
 
 // Define Schema for each challenge
 const ChallengeSchema = new mongoose.Schema({
   title: String,
   description: String,
-  dateStart: String,
-  dateEnd: String,
+  topic: String,
+  date: String,
+  isPrivate: String
 });
 
 // Model for each post
 const Challenge = mongoose.model("Challenge", ChallengeSchema);
 
 // function for saving the data to MongoDB
-const SaveChallengeData = async (content) =>{
-  // instance of post model
+const SaveChallengeData = async (data) => {
+
+  // instance of challenge model
   const challenge1  = new Challenge(data);
 
-  // save this post to database
+  // save this challenge to database
   challenge1.save((error) =>{
       if(error){
           console.log("Oops something went wrong!")
@@ -43,12 +44,13 @@ const SaveChallengeData = async (content) =>{
 } 
 
 router.post("/", (req, res) => {
-    const name = req.body.name
+    const title = req.body.name
+    const description = req.body.description
     const topic = req.body.topic
-    const dates = req.body.date
-    const isPrivate = req.body.isPrivate
-    // now do something amazing with this data...
-    // ... then send a response of some kind
+    const date = req.body.date
+    const isPrivate = req.body.private
+    const data = {title: title, description: description, topic: topic, date: date, isPrivate: isPrivate}
+    SaveChallengeData(data);
     console.log(req.body);
     res.send({text: "User Input Received"});
   })

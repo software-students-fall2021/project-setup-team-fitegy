@@ -10,7 +10,6 @@ require("dotenv").config({ silent: true }); // load environmental variables from
 const morgan = require("morgan"); // middleware for nice logging of incoming HTTP requests
 const PORT = process.env.PORT || 3001;
 const cors = require("cors");
-require("../back-end/db.js");
 require('dotenv').config();
 
 app.use(cors());
@@ -42,7 +41,6 @@ app.use("/api/notifications", require("./routes/notification.js"));
 app.use("/api/createChallenge", require("./routes/createChallenge.js"));
 app.use("/api/profile", require("./routes/profile.js"));
 app.use("/api/createPost", require("./routes/createPost.js"));
-app.use("/api/uploadPhoto", require("./routes/router.js"));
 app.use("/api/joined", require("./routes/joined"));
 app.use("/api/liked", require("./routes/countLikes.js"));
 //app.use("/api/settings", require("./routes/settings.js"));

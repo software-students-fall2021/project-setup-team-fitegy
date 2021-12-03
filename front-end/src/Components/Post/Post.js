@@ -51,7 +51,7 @@ const Post = (props) => {
           'Content-type': 'application/json'
         },
         body: JSON.stringify({
-          text: "one like coming!",
+          content: props.content,
           id: props.id
           }),
         })

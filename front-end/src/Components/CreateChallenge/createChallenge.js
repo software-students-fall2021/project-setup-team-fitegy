@@ -28,7 +28,7 @@ const CreateChallenge = () =>{
             },
             body: JSON.stringify({
                 name: name,
-                descriptioin: description,
+                description: description,
                 topic: topic,
                 date: date,
                 private: isPrivate
