@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
-require("./")
+require("./createChallenge.js")
 
 // let mockData;
 // const getMockData = async () => {
@@ -22,10 +22,12 @@ mongoose.connect(MONGODB_URL);
 const Stats = mongoose.model("Stats")
 
 router.get('/', async (req, res) => {
-  let newData = await Stats.find(); //TODO: change to variable.find()
-  res.json([
-      {ongoing: newData.ongoing_challenges, done: newData.done_challenges},
-  ]);
+    const newData = await Stats.find();
+    const postStat = newData.map((stat)=>{
+        return {ongoing: stat.ongoing_challenges}
+    })
+    console.log(postStat)
+    res.json(postStat);
 })
 
 module.exports = router;
