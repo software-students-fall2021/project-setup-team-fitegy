@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import Title from './Title';
 import Account from './Account';
 import Pfp from './Pfp';
@@ -7,9 +7,14 @@ import BackButton from './BackButton';
 import Profile from './Profile';
 
 
+function handleClick() {
+
+  alert(fetch('http://localhost:3001/api/settings/'));
+  
+};
 
 
-function App() {
+function Settings() {
   return(
     <div className="App">
       <header className="App-header">
@@ -24,11 +29,10 @@ function App() {
         <Pfp />
         <br></br>
 
+    
         <br></br>
-        <br></br>
-        <br></br>
-        {/*TODO, change link to button, add backend to change image, currently links to google for placeholder*/}
-        <a href="http://www.google.com"> Change Profile Picture</a>
+
+        <button onClick={handleClick}>  Change Profile Picture </button>
       </header>
 
 
@@ -43,5 +47,5 @@ function App() {
   );
 }
 
-export default App;
+export default Settings;
 
