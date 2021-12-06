@@ -5,23 +5,23 @@ const CreatePost = (props) => {
     const [title, setName] = React.useState("");
     const [content, setDescription] = React.useState("");
     const [isPrivate, setPrivate] = React.useState(false);
-    const [selectedFile, setSelectedFile] = React.useState([]);
-	const [isFilePicked, setIsFilePicked] = React.useState(false);
+//     const [selectedFile, setSelectedFile] = React.useState([]);
+// 	const [isFilePicked, setIsFilePicked] = React.useState(false);
     // const [pictures, setPictures] = useState([]);
-    const fileInput = useRef(null)
-    const onDrop = e => {
-        // setPictures([...pictures, picture]);
-        // const file = e;
-        if (e.target.files && e.target.files.length > 0 && e.size > 52428800)
-        alert("File size exceeds the limit!" );
-        else{
-            setSelectedFile(e.target.files[0]);
-            setIsFilePicked(true);
-        }
-    };
-    const removeSelectedFile = () => {
-        setSelectedFile();
-      };
+//     const fileInput = useRef(null)
+//     const onDrop = e => {
+//         // setPictures([...pictures, picture]);
+//         // const file = e;
+//         if (e.target.files && e.target.files.length > 0 && e.size > 52428800)
+//         alert("File size exceeds the limit!" );
+//         else{
+//             setSelectedFile(e.target.files[0]);
+//             setIsFilePicked(true);
+//         }
+//     };
+//     const removeSelectedFile = () => {
+//         setSelectedFile();
+//       };
     // const handleFileInput = (e) => {
     //     // handle validations
     //     const file = e.target.files[0];
@@ -42,7 +42,7 @@ const CreatePost = (props) => {
         formData.append('Post Title', title);
         formData.append('Content', content);
         formData.append('Set Private', isPrivate);
-		formData.append('File', selectedFile);
+// 		formData.append('File', selectedFile);
 
 		fetch(
 			'http://localhost:3001/api/createPost',
@@ -159,91 +159,91 @@ const CreatePost = (props) => {
               </label>
   
               
-              <label>
-                Photo Selected:
-                {/* <button onClick={removeSelectedFile}>Remove This Image</button> */}
-                {/* <input 
-                    type="file" onChange={handleFileInput}>
-                <button onClick={e => fileInput.current && fileInput.current.click()} className="btn btn-primary">
-                <FileUploaded
-                    onFileSelectSuccess={(file) => setSelectedFile(file)}
-                    onFileSelectError={({ error }) => alert(error)}
-                /> */}
+//               <label>
+//                 Photo Selected:
+//                 {/* <button onClick={removeSelectedFile}>Remove This Image</button> */}
+//                 {/* <input 
+//                     type="file" onChange={handleFileInput}>
+//                 <button onClick={e => fileInput.current && fileInput.current.click()} className="btn btn-primary">
+//                 <FileUploaded
+//                     onFileSelectSuccess={(file) => setSelectedFile(file)}
+//                     onFileSelectError={({ error }) => alert(error)}
+//                 /> */}
 
-                  {/* <section className="button">
+//                   {/* <section className="button">
                   
-                  </section> */}
-                  {/* Photo Selected: */}
-                  {/* <input
-                    style={{
-                        display:'none'
-                    }}
-                    id="myFileInput"
-                    // ref={(el) => { this.input = el }}
-                    type='file'
-                    accept='image/*'
-                    // onChange={handleImageChange}
+//                   </section> */}
+//                   {/* Photo Selected: */}
+//                   {/* <input
+//                     style={{
+//                         display:'none'
+//                     }}
+//                     id="myFileInput"
+//                     // ref={(el) => { this.input = el }}
+//                     type='file'
+//                     accept='image/*'
+//                     // onChange={handleImageChange}
                     
-                  /> */}
-                    {/* <button onClick={selectPhoto}>Select a Photo</button> */}
-                        {/* {this.state.imgUrl&&<img src={this.state.imgUrl}  alt="" />} */}
-                        {/* <ImageUploader
-                            withIcon={true}
-                            buttonText='Choose images'
-                            onChange={onDrop}
-                            imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                            maxFileSize={5242880}
-                            // use: [
-                            //   {
-                            //     loader: 'file-loader',
-                            //     options: {
-                            //       limit: 8192,
-                            //       esModule: false,
-                            //     },
-                            //   },
-                        /> */}
-                        <input
-                        name="selectedFile"
-                        type="file"
-                        // formControlName='fileSource'
-                        // value={selectedFile}
-                        onChange={onDrop}
-                        // onChange="onDrop($event)"
-                        // onChange={e=> setDescription(e.target.value)}
-                        // required 
-                        />
-                        {isFilePicked ? (
-				        <div>
-					        <p>Filename: {selectedFile.name}</p>
-					        <p>Filetype: {selectedFile.type}</p>
-					        <p>Size in bytes: {selectedFile.size}</p>
-					        <p>lastModifiedDate:{' '}{selectedFile.lastModifiedDate.toLocaleDateString()}</p>
-				        </div>
-			            ) : (
-				            <p>Select a file to show details</p>
-			            )}
-                        {/* <button onClick={removeSelectedFile}>Remove This Image</button> */}
-                        {/* {selectedFile && (
-                            <div>
-                            <img
-                            // src={selectedFile}
-                            src={URL.createObjectURL(selectedFile)}
-                            alt=""
-                            />
-                            <button onClick={removeSelectedFile}>Remove This Image</button>
-                            </div>
-                        )} */}
+//                   /> */}
+//                     {/* <button onClick={selectPhoto}>Select a Photo</button> */}
+//                         {/* {this.state.imgUrl&&<img src={this.state.imgUrl}  alt="" />} */}
+//                         {/* <ImageUploader
+//                             withIcon={true}
+//                             buttonText='Choose images'
+//                             onChange={onDrop}
+//                             imgExtension={['.jpg', '.gif', '.png', '.gif']}
+//                             maxFileSize={5242880}
+//                             // use: [
+//                             //   {
+//                             //     loader: 'file-loader',
+//                             //     options: {
+//                             //       limit: 8192,
+//                             //       esModule: false,
+//                             //     },
+//                             //   },
+//                         /> */}
+//                         <input
+//                         name="selectedFile"
+//                         type="file"
+//                         // formControlName='fileSource'
+//                         // value={selectedFile}
+//                         onChange={onDrop}
+//                         // onChange="onDrop($event)"
+//                         // onChange={e=> setDescription(e.target.value)}
+//                         // required 
+//                         />
+//                         {isFilePicked ? (
+// 				        <div>
+// 					        <p>Filename: {selectedFile.name}</p>
+// 					        <p>Filetype: {selectedFile.type}</p>
+// 					        <p>Size in bytes: {selectedFile.size}</p>
+// 					        <p>lastModifiedDate:{' '}{selectedFile.lastModifiedDate.toLocaleDateString()}</p>
+// 				        </div>
+// 			            ) : (
+// 				            <p>Select a file to show details</p>
+// 			            )}
+//                         {/* <button onClick={removeSelectedFile}>Remove This Image</button> */}
+//                         {/* {selectedFile && (
+//                             <div>
+//                             <img
+//                             // src={selectedFile}
+//                             src={URL.createObjectURL(selectedFile)}
+//                             alt=""
+//                             />
+//                             <button onClick={removeSelectedFile}>Remove This Image</button>
+//                             </div>
+//                         )} */}
                         
-                        {/* <button onClick={e => fileInput.current && fileInput.current.click()} className="btn btn-primary"></button> */}
+//                         {/* <button onClick={e => fileInput.current && fileInput.current.click()} className="btn btn-primary"></button> */}
                         
-                        {/* <img src={this.state.file} alt=""/>                         */}
+//                         {/* <img src={this.state.file} alt=""/>                         */}
 
                         
                         
-                         {/* <img id="output_image" height=50px width=50px\ */}
-                        {/* <input type="file" accept="image/*" onchange="preview_image(event)"></input> */}
-                  {/* <img id="image" src="https://picsum.photos/200?page=home" width="100" height="100"/> */}
-              </label>
+//                          {/* <img id="output_image" height=50px width=50px\ */}
+//                         {/* <input type="file" accept="image/*" onchange="preview_image(event)"></input> */}
+//                   {/* <img id="image" src="https://picsum.photos/200?page=home" width="100" height="100"/> */}
+//               </label>
               
   
               <label>
