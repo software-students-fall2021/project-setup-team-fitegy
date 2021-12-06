@@ -14,6 +14,10 @@ import NotificationPage from "./Components/NotificationPage/NotificationPage.js"
 import { Login } from "@mui/icons-material";
 import Challenge from "./Components/ChallengeforProfile/ChallengeforProfile";
 import NavBar from "./Components/NavBar/navBar";
+import Protected from "./Components/Protected"
+import SetLocalStorage from "./Components/SetLocalStorage"
+import GetLocalStorage from "./Components/GetLocalStorage"
+
 function App() {
   return (
     <Router>
@@ -49,6 +53,7 @@ function App() {
           <li>
             <Link to="/select-photo">Select Photo</Link>
           </li>
+          
         </ul>
       </nav>
       <NavBar />
@@ -62,6 +67,9 @@ function App() {
           <Route path="/profile">
             <ProfileBar />
           </Route>
+          <Route path="/set-local-storage" element={<SetLocalStorage />} />
+          <Route path="/get-local-storage" element={<GetLocalStorage />} />
+          <Route path="/protected" element={<Protected />} />
           <Route path="/create-challenge" component={CreateChallenge} />
           <Route path="/challenge-manager" component={ChallengeManager} />
           <Route path="/create-post" component={CreatePost} />
