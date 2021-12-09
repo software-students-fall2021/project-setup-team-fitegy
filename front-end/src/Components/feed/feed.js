@@ -5,11 +5,12 @@ import IconButton from '@mui/material/IconButton';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import { BrowserRouter as Link } from "react-router-dom";
 
+
 const Feed = () => {
   
   const [content, setContent]  = useState([]);
   useEffect(()=>{
-      fetch('http://localhost:3001/api/feed')
+      fetch(`${process.env.REACT_APP_IP}:3001/api/feed`)
         .then(res => res.json())
         .then(data => setContent(data))
 
