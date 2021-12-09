@@ -45,7 +45,7 @@ const Post = (props) => {
       console.log("liked!");
 
       // send data to the back
-      fetch('http://localhost:3001/api/liked', {
+      fetch(`${process.env.REACT_APP_IP}:3001/api/liked`, {
         method: "POST",
         headers: {
           'Content-type': 'application/json'

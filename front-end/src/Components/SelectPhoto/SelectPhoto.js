@@ -58,7 +58,7 @@ const SelectPhoto = (props) => {
 		  formData.append('File', selectedFile);
 
 		fetch(
-			'http://localhost:3001/api/uploadPhoto',
+			'`${process.env.REACT_APP_IP}:3001/api/uploadPhoto`',
 			{
 				method: 'POST',
                 headers: {
