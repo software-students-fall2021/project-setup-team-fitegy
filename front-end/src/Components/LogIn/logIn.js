@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { Navigate, useSearchParams } from "react-router-dom"
+import React, { Component, useState, useEffect } from "react";
+import { Redirect} from "react-router-dom"
 import axios from "axios"
 import "./LogIn.css"
 
 
 const LogIn = () =>{
-    let [urlSearchParams] = useSearchParams() // get access to the URL query string parameters
+    let urlSearchParams = new URLSearchParams() // get access to the URL query string parameters
 
     //const [credentials, setCredentials] = React.useState("");
     //const [password, setPassword] = React.useState("");
@@ -13,6 +13,8 @@ const LogIn = () =>{
     // create state variables to hold username and password
     const [response, setResponse] = useState({}) // the API will return an object with a JWT token, if the user logs in successfully
     const [errorMessage, setErrorMessage] = useState("")
+    const[username, setName]= useState("")
+    const[password, setPassword]= useState("")
 
     useEffect(() => {
         const qsError = urlSearchParams.get("error") // get any 'error' field in the URL query string
@@ -27,27 +29,28 @@ const LogIn = () =>{
           localStorage.setItem("token", response.token) // store the token into localStorage
         }
     }, [response])
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        try{
+        //try{
             const requestData={
-                username: e.target.username.value,
-                password: e.target.password.value,
+                username: username,
+                password: password,
             }
         
-        
+        console.log(requestData)
+        console.log(process.env.REACT_APP_BACKEND)
         //POST request to for authentication
         const response = await axios.post(
-            `${process.env.REACT_APP_BACKEND}/login`,
+            `localhost:3001/login`,
             requestData
         )
 
         //store the post request in the data state variable
         console.log(`Server response: ${JSON.stringify(response.data, null, 0)}`)
         setResponse(response.data)
-        } catch(err){
-            setErrorMessage(" Username or Password is incorrect. Try Again! Check out the usernames in the server's user_data.js")
-        }
+       // } catch(err){
+        //    setErrorMessage(" Username or Password is incorrect. Try Again! Check out the usernames in the server's user_data.js")
+        //}
 
     }
 
@@ -64,7 +67,7 @@ const LogIn = () =>{
                         <input
                         name="name"
                         type="name"
-                        value={name}
+                        value={username}
                         onChange={e => setName(e.target.value)}
                         required />
                     </label>
@@ -85,7 +88,7 @@ const LogIn = () =>{
         
             </div>
             );
-            else return <Navigate to="/protected" />
+            else return <Redirect to="/protected" />
         }
 
 export default LogIn;

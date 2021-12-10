@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Navigate } from "react-router-dom"
+import {Redirect} from "react-router-dom"
 import axios from "axios"
 
 const Protected = props => {
@@ -44,7 +44,7 @@ const Protected = props => {
           <pre>{JSON.stringify(response, null, 2)}</pre>
         </>
       ) : (
-        <Navigate to="/login?error=protected" />
+        <Redirect to="/login?error=protected" />
       )}
     </>
   )

@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link, Navigate } from "react-router-dom";
 
 import CreateNew from "./Components/CreateNew/createNew.js";
 import ProfileBar from "./Components/ProfileBar/ProfileBar.js";
@@ -69,7 +69,7 @@ function App() {
           </Route>
           <Route path="/set-local-storage" element={<SetLocalStorage />} />
           <Route path="/get-local-storage" element={<GetLocalStorage />} />
-          <Route path="/protected" element={<Protected />} />
+          <Route path="/protected" component={Protected} />
           <Route path="/create-challenge" component={CreateChallenge} />
           <Route path="/challenge-manager" component={ChallengeManager} />
           <Route path="/create-post" component={CreatePost} />
