@@ -43,8 +43,9 @@ app.use("/api/profile", require("./routes/profile.js"));
 app.use("/api/createPost", require("./routes/createPost.js"));
 app.use("/api/joined", require("./routes/joined"));
 app.use("/api/liked", require("./routes/countLikes.js"));
-app.use("/api/selectPhoto", require("./routes/selectPhoto.js"));
-//app.use("/api/settings", require("./routes/settings.js"));
+app.use("/api/uploadPhoto", require("./routes/uploadPhoto.js"));
+app.use("/api/settings", require("./routes/settings.js"));
+
 
 
 

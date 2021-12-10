@@ -11,32 +11,16 @@ mongoose.connect(MONGODB_URL);
 
 const Challenge = mongoose.model("Challenge");
 
-/* let mockData;
-const getMockData = async () => {
-    await axios
-        .get("https://my.api.mockaroo.com/myapi.json?key=aea8ef40")
-        .then(apiResponse => mockData = apiResponse.data) 
-        //.catch(err => next(err)) // pass any errors to express
-
-    let newData = mockData.map((data) => {
-        return {"title": data.title, "description": data.description, "dateStart": data.dateStart, "dateEnd": data.dateEnd}
-    })
-    return newData
-} */
-
 router.get("/", async (req, res) => {
   const challenges = await Challenge.find();
   const allChallenges = challenges.map((data) => {
     return {
       title: data.title,
       description: data.description,
-      dateStart: data.dateStart,
-      dateEnd: data.dateEnd,
-      mainIcon: "ShieldIcon",
-      subIcon: ["DirectionsBikeIcon", "EmojiEventsIcon"],
+      date: data.date,
     };
   });
-  console.log(allChallenges);
+  // console.log(allChallenges);
   res.json(allChallenges);
 });
 
