@@ -31,7 +31,7 @@ const CreatePost = (props) => {
     //   };
     const handleSubmit = (event) => {
         event.preventDefault();
-        const formData = new FormData();
+        //const formData = new FormData();
         console.log(`
         Post Title: ${title}
         Content: ${content}
@@ -39,13 +39,13 @@ const CreatePost = (props) => {
         File: ${selectedFile.name}
         `);
 
-        formData.append('Post Title', title);
-        formData.append('Content', content);
-        formData.append('Set Private', isPrivate);
-		formData.append('File', selectedFile);
-
+        //formData.append('Post Title', title);
+        //formData.append('Content', content);
+        //formData.append('Set Private', isPrivate);
+		//formData.append('File', selectedFile);
+        /*
 		fetch(
-			'http://localhost:3001/api/createPost',
+			`${process.env.REACT_APP_IP}:3001/api/createChallenge`,
 			{
 				method: 'POST',
                 headers: {
@@ -54,6 +54,7 @@ const CreatePost = (props) => {
 				body: formData,
 			}
 		)
+        
 			.then((response) => response.json())
 			// .then((result) => {
 			// 	console.log('Success:', result);
@@ -62,24 +63,23 @@ const CreatePost = (props) => {
 			// 	console.error('Error:', error);
 			// });
             .then(data => console.log(data.text));
-
+        */
         
     
         // event.preventDefault();
-        // fetch('http://localhost:3001/api/createPost', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({
-        //         title: title,
-        //         content: content,
-        //         private: isPrivate,
-        //         photo: selectedFile
-        //     }),
-        //     })
-        //     .then(response => response.json())
-        //     .then(data => console.log(data.text));
+        fetch(`${process.env.REACT_APP_IP}:3001/api/createPost`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+               },
+               body: JSON.stringify({
+                   title: title,
+                content: content,
+                private: isPrivate
+            }),
+            })
+            .then(response => response.json())
+            .then(data => console.log(data.text));
     
     }
     // const handleImageChange = (e) => {//处理图片

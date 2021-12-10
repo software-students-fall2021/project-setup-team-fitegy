@@ -14,7 +14,7 @@ const ChallengeManager = () => {
   });
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/challenge")
+    fetch(`${process.env.REACT_APP_IP}:3001/api/challenge`)
     .then(res => res.json())
     .then(data => setChallenges(data))
   }, [])
