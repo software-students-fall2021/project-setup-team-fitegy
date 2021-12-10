@@ -21,7 +21,7 @@ const CreateChallenge = () =>{
         Set Private: ${isPrivate}
         `);
 
-        fetch('http://localhost:3001/api/createChallenge', {
+        fetch(`${process.env.REACT_APP_IP}:3001/api/createChallenge`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
