@@ -4,7 +4,6 @@ import Pfp from './Pfp';
 import './App.css';
 import BackButton from './BackButton';
 import Profile from './Profile';
-import { stepContentClasses } from '@mui/material';
 
 
 function handleClick() {
@@ -24,7 +23,7 @@ function SettingsF() {
 
         {/* Title of the Page, Says Settings and is Centered with the Profile Picture Displayed*/}
        
-        
+        {/* Just a link, could make a button if time permits, but it works fine */}
         <BackButton />
       
         <Title />
