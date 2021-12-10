@@ -2,7 +2,6 @@
   "name": "fitegy",
   "version": "0.1.0",
   "private": true,
-  "build": "CI=false && react-scripts build",
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@emotion/react": "^11.5.0",
@@ -29,7 +28,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts --max_old_space_size=8192 build",
+    "build": "CI=false && react-scripts --max_old_space_size=8192 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
