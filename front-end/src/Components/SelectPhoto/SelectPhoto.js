@@ -58,7 +58,7 @@ const SelectPhoto = (props) => {
 		  formData.append('File', selectedFile);
 
 		fetch(
-			'`${process.env.REACT_APP_IP}:3001/api/uploadPhoto`',
+			`${process.env.REACT_APP_IP}:3001/api/uploadPhoto`,
 			{
 				method: 'POST',
                 headers: {
@@ -76,26 +76,6 @@ const SelectPhoto = (props) => {
               <h1>Select Photo</h1>
               <button id= "cancel"> Cancel</button>
               <button id="post_b">Choose</button>
-              {/* <label>
-                  Title:
-                  <input
-                  name="title"
-                  type="title"
-                  value={title}
-                  onChange={e => setName(e.target.value)}
-                  required />
-              </label>
-              
-              <label>
-                  Content:
-                  <input
-                  name="content"
-                  type="content"
-                  value={content}
-                  onChange={e => setDescription(e.target.value)}
-                  required />
-              </label> */}
-              
               <label>
                 Photo Selected:
                         <input
@@ -114,18 +94,6 @@ const SelectPhoto = (props) => {
 				            <p>Select a file to show details</p>
 			            )}
               </label>
-              
-  
-              {/* <label>
-              Private   
-                  <input
-                  name="Private"
-                  type="checkbox"
-                  onChange={e => setPrivate(e.target.value)}
-                  />
-                      
-              </label> */}
-  
           </form>
     
       </div>
