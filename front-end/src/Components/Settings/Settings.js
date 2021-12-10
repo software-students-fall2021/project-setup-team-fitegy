@@ -4,7 +4,7 @@ import Pfp from './Pfp';
 import './App.css';
 import BackButton from './BackButton';
 import Profile from './Profile';
-
+import React, {useState, useEffect} from "react";
 
 function handleClick() {
   
@@ -17,6 +17,17 @@ function handleClick() {
 
 
 function SettingsF() {
+
+
+  const [content, setContent]  = useState([]);
+  useEffect(()=>{
+      fetch(`${process.env.REACT_APP_IP}:3001/api/settings`)
+        .then(res => res.json())
+        .then(data => setContent(data))
+  }, [])
+
+
+
   return(
     <div className="App">
       <header className="App-header">
@@ -42,7 +53,7 @@ function SettingsF() {
       <br></br>
       
       {/*Two flex boxes for the account and profile*/}
-      <Account />
+      <Account userInfo = {content}/>
       <br></br>
       <Profile />
 

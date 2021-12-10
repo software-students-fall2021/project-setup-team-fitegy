@@ -1,10 +1,6 @@
 import React from "react";
 import './App.css';
 
-function Back(){
-    alert("Test Back")
-}
-
 function BackButton() {
     return(
 

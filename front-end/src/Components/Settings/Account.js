@@ -10,9 +10,8 @@ function name() {
 
 }
 
-function Account(){
+function Account(props){
 
-   
     return(
         
         <div>   
@@ -24,13 +23,11 @@ function Account(){
             
             <body className="container">
                 
-                <p> Name: Jane Smith</p> 
-
-                <p>Age: 21</p>
+                <p> Name: {props["userInfo"].name} {props["userInfo"].lastName}</p> 
            
-                <p>Username: Jane1</p>
-         
-                <p>Email: jane@fitegy.com </p>
+                <p>Username: {props["userInfo"].username}</p>
+
+                <p>Location: {props["userInfo"].location}</p>
          
             
             </body>
