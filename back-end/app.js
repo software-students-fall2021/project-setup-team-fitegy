@@ -23,8 +23,8 @@ app.use(cors());
 app.use(morgan("dev")); // morgan has a few logging default styles - dev is a nice concise color-coded style
 
 // use the bodyparser middleware to parse any data included in a request
-app.use(express.json({limit: '50mb'}));
-app.use(express.urlencoded({limit: '50mb'}));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({extended: true, limit: '50mb'}));
 
 // make 'public' directory publicly readable with static content
 app.use("/static", express.static("public"));
