@@ -12,6 +12,13 @@ const PORT = process.env.PORT || 3001;
 const cors = require("cors");
 require('dotenv').config();
 
+// mongoDB 
+require('dotenv').config({path:'../.env'});
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
+const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+mongoose.connect(MONGODB_URL);
+
 app.use(cors());
 /**
  * Typically, all middlewares would be included before routes
@@ -61,45 +68,83 @@ app.get(
     })
   }
 )
+// Define Schema for each notification
+const CredentialsSchema = new Schema({
+  username: String,
+  password: String
+});
 
+// Model for each notification
+const Credentials = mongoose.model("Credentials", CredentialsSchema);
+
+
+// function for saving the data to MongoDB
+const SaveCredentialsData = async (username, password) =>{
+
+  // create data
+  const data= {
+      username: username,
+      password: password, 
+  }
+
+  // instance of credentials model
+  const Credentials1  = new Credentials(data);
+
+  // save this post to database
+  Credentials1.save((error) =>{
+      if(error){
+          console.log("Oops something went wrong!")
+      }
+      else{
+          console.log("Data saved to MongoDB!")
+      }
+  })
+}
+
+const findUserCredentials = async(username) =>{
+  const user = await Credentials.find({username: username})
+  return user
+}
 // a route to handle a login attempt
 app.post("/login", function (req, res) {
-  // brab the name and password that were submitted as POST body data
+  // grab the name and password that were submitted as POST body data
   const username = req.body.username
   const password = req.body.password
-  // console.log(`${username}, ${password}`)
+  //console.log(`${username}, ${password}`)
   if (!username || !password) {
     // no username or password received in the POST body... send an error
     res
       .status(401)
       .json({ success: false, message: `no username or password supplied.` })
   }
+  findUserCredentials(username).then( (user) => {
+    console.log(user)
+    console.log(req.body.password)
+    console.log(user[0].password)
+    // usually this would be a database call, but here we look for a matching user in our mock data
+    if (!user) {
+      // no user found with this name... send an error
+      res
+        .status(401)
+        .json({ success: false, message: `user not found: ${username}.` })
+    }
 
-  // usually this would be a database call, but here we look for a matching user in our mock data
-  const user = users[_.findIndex(users, { username: username })]
-  if (!user) {
-    // no user found with this name... send an error
-    res
-      .status(401)
-      .json({ success: false, message: `user not found: ${username}.` })
-  }
+    // assuming we found the user, check the password is correct
+    // we would normally encrypt the password the user submitted to check it against an encrypted copy of the user's password we keep in the database... but here we just compare two plain text versions for simplicity
 
-  // assuming we found the user, check the password is correct
-  // we would normally encrypt the password the user submitted to check it against an encrypted copy of the user's password we keep in the database... but here we just compare two plain text versions for simplicity
-  else if (req.body.password == user.password) {
-    // the password the user entered matches the password in our "database" (mock data in this case)
-    // from now on we'll identify the user by the id and the id is the only personalized value that goes into our token
-    const payload = { id: user.id } // some data we'll encode into the token
-    const token = jwt.sign(payload, jwtOptions.secretOrKey) // create a signed token
-    res.json({ success: true, username: user.username, token: token }) // send the token to the client to store
-  } else {
-    // the password did not match
-    res.status(401).json({ success: false, message: "passwords did not match" })
-  }
+    else if (req.body.password == user[0].password) {
+      // the password the user entered matches the password in our "database" (mock data in this case)
+      // from now on we'll identify the user by the id and the id is the only personalized value that goes into our token
+      const payload = { id: user.id } // some data we'll encode into the token
+      const token = jwt.sign(payload, jwtOptions.secretOrKey) // create a signed token
+      console.log(token)
+      res.json({ success: true, username: user.username, token: token }) // send the token to the client to store
+    } else {
+      // the password did not match
+      res.status(401).json({ success: false, message: "passwords did not match" })
+    }
+  })
 })
-
-
-
 // route for HTTP GET requests to the root document
 
 app.get("/", (req, res) => {
@@ -115,8 +160,6 @@ app.use("/api/createPost", require("./routes/createPost.js"));
 app.use("/api/joined", require("./routes/joined"));
 app.use("/api/liked", require("./routes/countLikes.js"));
 app.use("/api/settings", require("./routes/settings.js"));
-
-
 
 // export the express app we created to make it available to other modules
 module.exports = app; // CommonJS export style

@@ -21,12 +21,13 @@ const ChallengeManager = () => {
   
   return (
     <>
-      <Container
+      <Container 
         sx={{
           display: "grid",
           gridTemplateColumns: "repeat(2, 1fr)",
           gap: 2,
         }}
+
         style={{ backgroundImage: "url('/images/background.png')"}}
       >
         {getChallenges}

@@ -1,6 +1,7 @@
 #feed{
     width: 390px;
-    
+    height: 844px;
+    overflow:scroll;
     display: flex;
     justify-content: start;
     padding: 20px;

@@ -44,7 +44,9 @@ function stringAvatar(name) {
 
 const Notif = (props) => {
     return (
+          
       <div id="notif">
+          
           <div id="profile_pic">
             <Avatar id="avatar" {...stringAvatar(props.name)} />
           </div>

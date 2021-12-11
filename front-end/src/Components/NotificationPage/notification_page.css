@@ -5,4 +5,5 @@
     justify-content: start;
     padding: 20px;
     flex-direction: column;
+    overflow:scroll;
 }

@@ -38,17 +38,17 @@ const LogIn = () =>{
             }
         
         console.log(requestData)
-        console.log(process.env.REACT_APP_BACKEND)
+        console.log(process.env.REACT_APP_IP)
         //POST request to for authentication
         const response = await axios.post(
-            `localhost:3001/login`,
+            `${process.env.REACT_APP_IP}:3001/login`,
             requestData
         )
 
         //store the post request in the data state variable
         console.log(`Server response: ${JSON.stringify(response.data, null, 0)}`)
         setResponse(response.data)
-       // } catch(err){
+        //} catch(err){
         //    setErrorMessage(" Username or Password is incorrect. Try Again! Check out the usernames in the server's user_data.js")
         //}
 
@@ -88,7 +88,7 @@ const LogIn = () =>{
         
             </div>
             );
-            else return <Redirect to="/protected" />
+            else return <Redirect to="/feed" />
         }
 
 export default LogIn;

@@ -14,7 +14,10 @@ import NotificationPage from "./Components/NotificationPage/NotificationPage.js"
 import { Login, Settings } from "@mui/icons-material";
 import Challenge from "./Components/ChallengeforProfile/ChallengeforProfile";
 import NavBar from "./Components/NavBar/navBar";
-import SettingsF from "./Components/Settings/Settings.js"
+import SettingsF from "./Components/Settings/Settings.js";
+import GetLocalStorage from"./Components/GetLocalStorage";
+import Protected from "./Components/Protected";
+import SetLocalStorage from "./Components/SetLocalStorage";
 
 function App() {
   return (
@@ -76,6 +79,7 @@ function App() {
           <Route path="/create-post" component={CreatePost} />
           <Route path="/select-photo" component={SelectPhoto} />
           <Route path="/settings" component={SettingsF} />
+
 
         </Switch>
       </div>
