@@ -25,6 +25,7 @@ function SettingsF() {
         .then(res => res.json())
         .then(data => setContent(data))
   }, [])
+  
 
 
 
