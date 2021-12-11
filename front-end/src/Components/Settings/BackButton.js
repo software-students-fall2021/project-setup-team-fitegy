@@ -8,9 +8,9 @@ function BackButton() {
     return(
 
         <div className='back'>
-            {/* Link to go back, change to Profile Page, and change link to button */}
+            {/* Link to go profile page, with ArrowBack Icon */}
             <Link to="/Profile">
-                <h5> <IoIosArrowBack /> </h5>
+                <h5> <IoIosArrowBack size="2em"/> </h5>
             </Link>
         </div>
 
