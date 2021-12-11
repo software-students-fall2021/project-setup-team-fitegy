@@ -4,6 +4,9 @@ import Post from "../Post/Post.js"
 import IconButton from '@mui/material/IconButton';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import { BrowserRouter as Link } from "react-router-dom";
+import { Container } from "@mui/material";
+import Box from "@mui/material/Box";
+
 
 
 const Feed = () => {
@@ -17,7 +20,7 @@ const Feed = () => {
   }, [])
 
     const userPosts = content.map((post)=>{
-      return <Post name={post.name} location={post.location} content={post.text} id = {post.id} likes = {post.likes}/>
+      return <Post name={post.name} location={post.location} content={post.text} id = {post.id} likes = {post.likes} key = {post.id}/>
     })
 
 
@@ -26,7 +29,11 @@ const Feed = () => {
           <div id="notification">
             <NotificationsNoneIcon />
           </div>
-          {userPosts}
+          
+          <div id="feedPosts">
+            {userPosts}
+          </div>
+          
       </div>   
     );
   
