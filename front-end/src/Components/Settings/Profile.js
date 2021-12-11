@@ -1,6 +1,11 @@
 import React from 'react';
 import './App.css';
 
+
+/* Handles the change password button in the settings page.
+    Asks for two passwords and if they match it sends the new
+    Password to the database
+*/
 function pass() {
     const newPass = prompt("Enter New Password", "New Password");
     const confPass = prompt("Confirm Password", "Confirm Password");
