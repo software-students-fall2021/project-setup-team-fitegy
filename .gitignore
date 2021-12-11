@@ -79,9 +79,6 @@ node_modules/
 jspm_packages/
 **/jspm_packages
 
-# Results of React build script
-build/
-**/build/
 
 # React dependencies
 .pnp

@@ -2,6 +2,9 @@ import React from "react";
 import { Box, Button, Card } from "@mui/material";
 import { useState } from "react";
 import CheckIcon from "@mui/icons-material/Check";
+import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import ShieldIcon from "@mui/icons-material/Shield";
 
 const Challenge = (props) => {
   const [toggle, setToggle] = useState(false);
@@ -48,7 +51,7 @@ const Challenge = (props) => {
             gridTemplateRows: "repeat(1, 1fr)",
           }}
         >
-          {props.mainIcon}
+          <ShieldIcon />
           <Box sx={{ fontWeight: "bold", mt: 1 }}>{props.title}</Box>
           <Box
             sx={{
@@ -56,13 +59,15 @@ const Challenge = (props) => {
               mt: 1,
             }}
           >
-            <div sx={{ fontSize: "small" }}>{props.subIcon[0]}</div>
-            <div sx={{ fontSize: "small" }}>{props.subIcon}</div>
+            <div sx={{ fontSize: "small" }}>
+              <DirectionsBikeIcon />
+            </div>
+            <div sx={{ fontSize: "small" }}>
+              <EmojiEventsIcon />
+            </div>
           </Box>
           <Box sx={{ fontSize: 10, my: 1 }}>{props.description}</Box>
-          <Box sx={{ fontSize: 10, mt: 1, mb: 2 }}>
-            {props.dateStart} - {props.dateEnd}
-          </Box>
+          <Box sx={{ fontSize: 10, mt: 1 }}>{props.date}</Box>
         </Box>
 
         <Button
