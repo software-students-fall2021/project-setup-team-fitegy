@@ -14,14 +14,9 @@ describe("/GET Challenge Data", () => {
         res.body.should.be.a("array");
         res.body.map((ele) => {
           ele.should.be.an("object");
-          ele.should.have.all.keys([
-            "title",
-            "description",
-            "dateStart",
-            "dateEnd",
-            "mainIcon",
-            "subIcon",
-          ])
+          if (ele.keys !== undefined) {
+            ele.should.have.all.keys(["title", "description", "date"]);
+          }
         });
         done();
       });
