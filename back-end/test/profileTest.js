@@ -5,20 +5,18 @@ chai.should();
 chai.use(chaiHttp);
 
 describe("/GET Profile Stats Data", () => {
-  it("should return an object with 3 keys", (done) => {
+  it("should return an object with 3 keys", async (done) => {
     chai
       .request(server)
       .get("/api/profile")
       .end((err, res) => {
         res.should.have.status(200);
-        res.body
-          .map((ele) => {
-            ele.should.be.an("object");
-            if (ele.keys !== undefined) {
-              ele.should.have.all.keys(["ongoing", "done", "points"]);
-            }
-          })
-          .then(done, done);
+        res.body.map((ele) => {
+          ele.should.be.an("object");
+          if (ele.keys !== undefined) {
+            ele.should.have.all.keys(["ongoing", "done", "points"]);
+          }
+        });
       });
   });
 });

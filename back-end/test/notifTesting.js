@@ -5,7 +5,7 @@ chai.should();
 chai.use(chaiHttp);
 
 describe("/GET Notification Data", () => {
-  it("should return an array of objects", (done) => {
+  it("should return an array of objects", async (done) => {
     chai
       .request(server)
       .get("/api/notifications")
@@ -21,7 +21,6 @@ describe("/GET Notification Data", () => {
                 res.body[1].should.have.all.keys(["name", "text"]);
                 res.body[2].should.have.all.keys(["name", "text"]);
                 */
-      })
-      .then(done, done);
+      });
   });
 });
