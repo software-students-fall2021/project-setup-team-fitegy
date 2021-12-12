@@ -1,55 +1,42 @@
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
 const app = express();
-
-//Here we are configuring express to use body-parser as middle-ware.
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-//mongoDB code 
-require('dotenv').config({path:'../.env'});
-const mongoose = require("mongoose");
-const { Schema } = mongoose;
-const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
-mongoose.connect(MONGODB_URL);
+const multer = require("multer");
+const fs = require('fs');
 
 
-var imageSchema = new mongoose.Schema({
-    name: String,
-    desc: String,
-    img:
-    {
-        data: Buffer,
-        contentType: String
+let uploadFolder = './public/images/'; 
+
+var storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        console.log(req.file, req.body)
+        cb(null, uploadFolder)
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + "-" + Date.now() + "-" + file.originalname)
     }
 });
-  
-module.exports = new mongoose.model('Image', imageSchema);
+var upload = multer({storage: storage});    
 
-// function for saving the data to MongoDB
-const SavePostData = async (content) => {
-  // instance of post model
-  const img1  = new Image(data);
-  // save this post to database
-  img1.save((error) =>{
-      if(error){
-          console.log("Oops something went wrong!")
-      }
-      else{
-          console.log("Data saved to MongoDB!")
-      }
+
+router.post('/uploadPhoto', upload.single('selectedFile'), function (req, res, next) {
+    var file = req.file;
+    var fileInfo = {};
+
+    fileInfo.mimetype = file.mimetype;
+    fileInfo.originalname = file.originalname;
+    fileInfo.size = file.size;
+    fileInfo.path = file.path;
+
+    res.set({
+        'content-type': 'application/json; charset=utf-8'
+    });
+
+    res.send(JSON.stringify(fileInfo));
+    res.send("success");
+    next();
   })
-} 
-
-
-router.post("/", (req, res) => {
-    const name = req.body.name
-    const desc = req.body.desc
-    const img = req.body.img
-    console.log(req.body);
-    res.send({text: "User Input Received"});
-  })
-
 
 module.exports = router;

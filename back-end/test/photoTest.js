@@ -4,13 +4,17 @@ const chaiHttp = require("chai-http");
 chai.should();
 chai.use(chaiHttp);
 
-describe("/GET Post Data", () => {
-  it("should return an array of objects", (done) => {
+describe("/GET Photo Test", () => {
+  it("Should receive a file", (done) => {
     chai
       .request(server)
-      .options("/api/createPost")
+      .options("/api/photo")
       .end((err, res) => {
+        console.log(res.body);
         res.should.have.status(204);
+        /* res.body.should.be.a("object");
+        res.body.should.have.property("data").eql("File Uploaded"); */
+
         done();
       });
   });

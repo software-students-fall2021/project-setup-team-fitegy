@@ -5,7 +5,7 @@ import Notif from "../Notification/Notif"
 const NotificationPage = () => {
   const [content, setContent]  = useState([]);
     useEffect(()=>{
-      fetch('http://localhost:3001/api/notifications')
+      fetch(`${process.env.REACT_APP_IP}:3001/api/notifications`)
         .then(res => res.json())
         .then(data => setContent(data));
     }, [])
@@ -13,7 +13,7 @@ const NotificationPage = () => {
       return <Notif name={notif.name} content={notif.text}/>
     })
     return (
-      <div id="notification_page" style={{ backgroundImage: "url('/images/background.png')", backgroundRepeat: "repeat-y" }}>
+      <div id="notification_page" style={{ backgroundImage: "url('/images/background.png')", backgroundRepeat: "repeat-y"}}>
          {notifications}
       </div>   
     );

@@ -30,12 +30,6 @@ const { Schema } = mongoose;
 const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 mongoose.connect(MONGODB_URL);
 
-// check if mongoose is connected to MongoDB
-/*
-mongoose.connection.on("connected", ()=>{
-  console.log("Mongoose is connected!");
-})
-*/
 
 // Define Schema for each post
 const PostSchema = new Schema({

@@ -23,8 +23,8 @@ app.use(cors());
 app.use(morgan("dev")); // morgan has a few logging default styles - dev is a nice concise color-coded style
 
 // use the bodyparser middleware to parse any data included in a request
-app.use(bodyParser.json()); // decode JSON-formatted incoming POST data
-app.use(bodyParser.urlencoded({ extended: true })); // decode url-encoded incoming POST data
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({extended: true, limit: '50mb'}));
 
 // make 'public' directory publicly readable with static content
 app.use("/static", express.static("public"));
@@ -43,7 +43,7 @@ app.use("/api/profile", require("./routes/profile.js"));
 app.use("/api/createPost", require("./routes/createPost.js"));
 app.use("/api/joined", require("./routes/joined"));
 app.use("/api/liked", require("./routes/countLikes.js"));
-//app.use("/api/settings", require("./routes/settings.js"));
+app.use("/api/settings", require("./routes/settings.js"));
 
 
 
