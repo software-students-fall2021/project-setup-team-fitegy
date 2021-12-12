@@ -26,7 +26,6 @@ router.get("/", async (req, res) => {
     const stats = await Stats.find();
     console.log(stats);
     res.json(stats);
-    return stats
   });
 
 module.exports = router;

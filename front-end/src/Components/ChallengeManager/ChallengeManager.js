@@ -27,9 +27,12 @@ const ChallengeManager = () => {
     <>
       <Container
         sx={{
+          width: 390,
+          height: 844,
           display: "grid",
           gridTemplateColumns: "repeat(2, 1fr)",
           gap: 2,
+          overflow: 'scroll'
         }}
         style={{ backgroundImage: "url('/images/background.png')" }}
       >
