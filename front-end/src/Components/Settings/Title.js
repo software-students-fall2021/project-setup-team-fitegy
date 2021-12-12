@@ -6,7 +6,7 @@ function Title(){
     return(
         <div className="title"> 
 
-            <h1>Settings</h1>
+            <h1> Settings</h1>
         
 
         </div>
