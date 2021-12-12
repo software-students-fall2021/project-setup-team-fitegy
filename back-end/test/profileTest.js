@@ -5,8 +5,8 @@ chai.should();
 chai.use(chaiHttp);
 
 describe("/GET Profile Stats Data", () => {
-  it("should return an object with 3 keys", async () => {
-    await chai
+  it("should return an object with 3 keys", (done) => {
+    chai
       .request(server)
       .get("/api/profile")
       .end((err, res) => {
@@ -17,6 +17,8 @@ describe("/GET Profile Stats Data", () => {
             ele.should.have.all.keys(["ongoing", "done", "points"]);
           }
         });
-      });
+        done();
+      })
+      .catch(done);
   });
 });

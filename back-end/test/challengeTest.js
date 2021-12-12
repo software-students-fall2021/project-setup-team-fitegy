@@ -5,8 +5,8 @@ chai.should();
 chai.use(chaiHttp);
 
 describe("/GET Challenge Data", () => {
-  it("should return an array of objects", async () => {
-    await chai
+  it("should return an array of objects", (done) => {
+    chai
       .request(server)
       .get("/api/challenge")
       .end((err, res) => {
@@ -18,6 +18,8 @@ describe("/GET Challenge Data", () => {
             ele.should.have.all.keys(["title", "description", "date"]);
           }
         });
-      });
+        done();
+      })
+      .catch(done);
   });
 });

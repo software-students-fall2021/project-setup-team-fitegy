@@ -5,8 +5,8 @@ chai.should();
 chai.use(chaiHttp);
 
 describe("/GET Feed Data", () => {
-  it("should return an array of objects", async () => {
-    await chai
+  it("should return an array of objects", (done) => {
+    chai
       .request(server)
       .get("/api/feed")
       .end((err, res) => {
@@ -18,6 +18,8 @@ describe("/GET Feed Data", () => {
             ele.should.have.all.keys(["name", "location", "text"]);
           }
         });
-      });
+        done();
+      })
+      .catch(done);
   });
 });
