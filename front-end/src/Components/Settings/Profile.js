@@ -24,8 +24,12 @@ function pass() {
             .then(response => response.json())
             .then(data => console.log(data.text));
     } else {
-        alert("Invalid Passwords")
+        alert("Invalid: Passwords Do Not Match")
     }
+}
+
+function logOff() {
+    alert("Logged off")
 }
 
 
@@ -44,7 +48,9 @@ function Profile(){
                     <button onClick = {pass}> Change Password </button>
                 </p>
              
-                <p><a href="http://www.google.com"> Blocked Users</a></p>
+                <p>
+                    <button onClick = {logOff}> Log Off </button>
+                </p>
             </body>
 
     

@@ -39,11 +39,9 @@ function SettingsF() {
          
         {/* Just a link, could make a button if time permits, but it works fine */}
         <BackButton />
-      
         <Title />
         
         {/*Profile Picture with spacing*/}
-  
         <Pfp />
         
        

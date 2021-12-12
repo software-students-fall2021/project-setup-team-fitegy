@@ -50,13 +50,13 @@ function ProfileBar() {
               <Tab label="Posts" value="1" color="warning" />
               <Tab label="Stats" value="2" />
               <Tab label="My Challenges" value="3" />
+            
               
             </Tabs>
             {/* Button to Settings Page */}
             <Link to="/Settings">
-                <h5> <BsGear size="2em"/> </h5>
-            </Link>  
-
+                <h5> <BsGear size="1.5em"/> </h5>
+              </Link>  
           </Box>
           <TabPanel value="1">
             <Box id="posts" sx={{ width: 390 }}>
