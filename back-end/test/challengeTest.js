@@ -20,6 +20,6 @@ describe("/GET Challenge Data", () => {
         });
         done();
       })
-      .catch(done);
+      .timeout(20000);
   });
 });

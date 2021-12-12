@@ -24,6 +24,6 @@ describe("/GET Notification Data", () => {
 
         done();
       })
-      .catch(done);
+      .timeout(20000);
   });
 });

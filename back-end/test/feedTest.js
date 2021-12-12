@@ -20,6 +20,6 @@ describe("/GET Feed Data", () => {
         });
         done();
       })
-      .catch(done);
+      .timeout(20000);
   });
 });
