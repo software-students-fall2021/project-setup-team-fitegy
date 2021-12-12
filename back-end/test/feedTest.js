@@ -12,13 +12,14 @@ describe("/GET Feed Data", () => {
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a("array");
-        res.body.map((ele) => {
-          ele.should.be.an("object");
-          if (ele.keys !== undefined) {
-            ele.should.have.all.keys(["name", "location", "text"]);
-          }
-        });
-        done();
+        res.body
+          .map((ele) => {
+            ele.should.be.an("object");
+            if (ele.keys !== undefined) {
+              ele.should.have.all.keys(["name", "location", "text"]);
+            }
+          })
+          .then(done, done);
       });
   });
 });

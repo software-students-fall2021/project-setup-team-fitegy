@@ -21,7 +21,7 @@ describe("/GET Notification Data", () => {
                 res.body[1].should.have.all.keys(["name", "text"]);
                 res.body[2].should.have.all.keys(["name", "text"]);
                 */
-        done();
-      });
+      })
+      .then(done, done);
   });
 });

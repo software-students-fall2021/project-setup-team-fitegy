@@ -11,13 +11,14 @@ describe("/GET Profile Stats Data", () => {
       .get("/api/profile")
       .end((err, res) => {
         res.should.have.status(200);
-        res.body.map((ele) => {
-          ele.should.be.an("object");
-          if (ele.keys !== undefined) {
-            ele.should.have.all.keys(["ongoing", "done", "points"]);
-          }
-        });
-        done();
+        res.body
+          .map((ele) => {
+            ele.should.be.an("object");
+            if (ele.keys !== undefined) {
+              ele.should.have.all.keys(["ongoing", "done", "points"]);
+            }
+          })
+          .then(done, done);
       });
   });
 });
