@@ -23,7 +23,6 @@ describe("/GET Notification Data", () => {
                 */
 
         done();
-      })
-      .timeout(20000);
+      });
   });
 });

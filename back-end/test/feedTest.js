@@ -19,7 +19,6 @@ describe("/GET Feed Data", () => {
           }
         });
         done();
-      })
-      .timeout(20000);
+      });
   });
 });

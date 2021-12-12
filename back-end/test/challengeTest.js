@@ -19,7 +19,6 @@ describe("/GET Challenge Data", () => {
           }
         });
         done();
-      })
-      .timeout(20000);
+      });
   });
 });

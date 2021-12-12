@@ -18,7 +18,6 @@ describe("/GET Profile Stats Data", () => {
           }
         });
         done();
-      })
-      .timeout(20000);
+      });
   });
 });
