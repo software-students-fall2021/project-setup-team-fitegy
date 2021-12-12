@@ -43,7 +43,6 @@ const SaveChallengeData = async (data) => {
   })
 } 
 
-
 router.post("/", (req, res) => {
     const title = req.body.name
     const description = req.body.description

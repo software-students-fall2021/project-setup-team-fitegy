@@ -20,12 +20,12 @@ const getChallenges = challenges.map((challenge) => {
   return <Challenge key={challenge.name}>{challenge}</Challenge>;
 });
 
-const ProfileBar = () =>{
+const ProfileBar = (props) =>{
   const [value, setValue] = React.useState("1");
-  const [content, setContent] = React.useState([]);
+  const [content, setContent]  = useState([]);
 
-  React.useEffect(()=>{
-    fetch(`${process.env.REACT_APP_IP}:3001/api/profile`)
+  useEffect(()=>{
+    fetch('http://localhost:3001/api/profile')
       .then(res => res.json())
       .then(data => setContent(data))
   }, [])
@@ -91,10 +91,10 @@ console.log(content[0]);
                 "You have done {content[0].done} challenges this month"
               </Button>
               <Button variant="contained" color="warning">
-                You have {content[0].ongoing} ongoing challenges
+                "You have {content[0].ongoing} ongoing challenges"
               </Button>
               <Button variant="contained" color="warning">
-                You have earned {content[0].points} points this month
+                "You have earned {content[0].points} points this month"
               </Button>
             </Stack>
           </TabPanel>

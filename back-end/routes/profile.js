@@ -19,7 +19,8 @@ require('dotenv').config({path:'../.env'})
 const { Schema } = mongoose;
 const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 mongoose.connect(MONGODB_URL);
-const Stats = mongoose.model("Stats")
+
+const Stats = mongoose.model("Stats");
 
 router.get("/", async (req, res) => {
     const stats = await Stats.find();
