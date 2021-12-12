@@ -4,15 +4,12 @@ const bodyParser = require("body-parser");
 const router = express.Router();
 const app = express();
 const multer = require("multer");
-const upload = multer({storage: storage});    
 const fs = require('fs');
 
-app.use(express.static(join(__dirname, 'public')))
 
 let uploadFolder = './public/images/'; 
 
-
-const storage = multer.diskStorage({
+var storage = multer.diskStorage({
     destination: (req, file, cb) => {
         console.log(req.file, req.body)
         cb(null, uploadFolder)
@@ -21,7 +18,10 @@ const storage = multer.diskStorage({
         cb(null, file.fieldname + "-" + Date.now() + "-" + file.originalname)
     }
 });
-app.post('/uploadPhoto', upload.single('selectedFile'), function (req, res, next) {
+var upload = multer({storage: storage});    
+
+
+router.post('/uploadPhoto', upload.single('selectedFile'), function (req, res, next) {
     var file = req.file;
     var fileInfo = {};
 
