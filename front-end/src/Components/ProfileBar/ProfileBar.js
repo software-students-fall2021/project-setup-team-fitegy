@@ -12,7 +12,8 @@ import { Container} from "@mui/material";
 import "./ProfileBar.css";
 import Post from "../Post/Post.js";
 import Challenge from "../ChallengeManager/components/Challenge.js";
-
+import {Link} from "react-router-dom";
+import { BsGear } from "react-icons/bs"
 
 const ProfileBar = () =>{
   let userName = 'Alex Ko'
