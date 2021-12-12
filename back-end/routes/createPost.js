@@ -32,7 +32,6 @@ const Post = mongoose.model("Post", PostSchema);
 const SavePostData = async (content) =>{
 
     // create data
-    let newData = await getMockData();
     const data= {
         Name: "Alex Ko",
         Location: "New York City",
