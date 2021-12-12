@@ -2,11 +2,6 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-workflows:
-  test-env-vars:
-    jobs:
-      - build:
-          context: my_context_name
 # Define the jobs we want to run for this project
 jobs:
   build-and-test-express-js:
@@ -18,11 +13,6 @@ jobs:
     steps:
       - checkout
       - run: echo "this is the build and test express.js job"
-      - run:
-        name: Add env variables
-        command: |
-          echo $DB_USERNAME
-          echo $DB_PASSWORD
       - run: |
           cd back-end
           pwd # for debugging: show current working directory
