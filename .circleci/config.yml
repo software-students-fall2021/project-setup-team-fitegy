@@ -1,9 +1,6 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
-env:
-  - DB_USERNAME = fitegy
-  - DB_PASSWORD = fitegy2021
 
 # Define the jobs we want to run for this project
 jobs:
@@ -16,7 +13,10 @@ jobs:
     steps:
       - checkout
       - run: echo "this is the build and test express.js job"
-      - run: |
+      - run:
+          command: |
+            echo $DB_USERNAME
+            echo $DB_PASSWORD
           cd back-end
           pwd # for debugging: show current working directory
           ls # for debugging: show sub-directories in here
