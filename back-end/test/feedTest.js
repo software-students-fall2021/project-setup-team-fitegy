@@ -6,6 +6,7 @@ chai.use(chaiHttp);
 
 describe("/GET Feed Data", () => {
   it("should return an array of objects", async (done) => {
+    this.timeout(0);
     chai
       .request(server)
       .get("/api/feed")
