@@ -1,35 +1,36 @@
-const express = require('express');
-const app = express();
-const port = 3001;
-const axios = require('axios').default;
-//require('dotenv').config();
+const express = require("express");
+const router = express.Router();
+const axios = require("axios");
+require('dotenv').config();
 
-//mongoDb Info
-{/*
+// mongoDB 
 const mongoose = require("mongoose");
 require('dotenv').config({path:'../.env'})
 const { Schema } = mongoose;
 const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 mongoose.connect(MONGODB_URL);
-require("./createPost.js")
-const Post = mongoose.model("Post");
-*/}
 
 
-app.get('/', (req, res) => {
-  res.send("Settings Page");
+// Define Schema for each notification
+const UserInfoSchema = new Schema({
+  name: String,
+  lastName: String,
+  username: String, 
+  location: String,
 });
 
-app.get('/pass', (req, res) => {
-  res.send("Password Changed");
-});
+// Model for each notification
+const UserInfo = mongoose.model("Userinfo", UserInfoSchema);
 
-app.get('/delete', (req, res) => {
-  res.send("Account Deleted");
-});
 
-app.listen(port, () => {
-  console.log(`Started on Port ${port}`);
-});
+router.get('/', async (req, res) => {
+  const UserInfos = await UserInfo.find();
+  res.json(UserInfos[0])
 
-  
+})
+
+router.post("/", async(req, res) =>{
+  console.log(req.body.newPass)
+})
+
+module.exports = router;

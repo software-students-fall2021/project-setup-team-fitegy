@@ -1,16 +1,17 @@
 import React from "react";
 import './App.css';
+import { Link } from 'react-router-dom';
+import { IoIosArrowBack } from 'react-icons/io'
 
-function Back(){
-    alert("Test Back")
-}
 
 function BackButton() {
     return(
 
         <div className='back'>
-            {/* Link to go back, change to Profile Page, and change link to button */}
-            <button onClick={Back}> Back </button>
+            {/* Link to go profile page, with ArrowBack Icon */}
+            <Link to="/Profile">
+                <h5> <IoIosArrowBack size="2em"/> </h5>
+            </Link>
         </div>
 
     );

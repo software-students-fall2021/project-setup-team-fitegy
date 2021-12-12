@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import "./ProfileBar.css";
 import Post from "../PostforProfile/PostforProfile.js";
 import Challenge from "../ChallengeforProfile/ChallengeforProfile";
+import { BsGear } from 'react-icons/bs'
 
 const challenges = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />];
 const getChallenges = challenges.map((challenge) => {
@@ -36,6 +37,7 @@ function ProfileBar() {
           <Box
             id="tabbar"
             sx={{ width: 390, borderBottom: 1, borderColor: "divider" }}
+            
           >
             <Tabs
               value={value}
@@ -43,11 +45,18 @@ function ProfileBar() {
               textColor="white"
               indicatorColor="warning"
               centered
+              
             >
               <Tab label="Posts" value="1" color="warning" />
               <Tab label="Stats" value="2" />
               <Tab label="My Challenges" value="3" />
+            
+              
             </Tabs>
+            {/* Button to Settings Page */}
+            <Link to="/Settings">
+                <h5> <BsGear size="1.5em"/> </h5>
+              </Link>  
           </Box>
           <TabPanel value="1">
             <Box id="posts" sx={{ width: 390 }}>

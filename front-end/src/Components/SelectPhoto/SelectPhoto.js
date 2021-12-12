@@ -2,41 +2,10 @@ import React, { useState, useEffect } from 'react'
 import './SelectPhoto.css'
 import ImageUploader from "react-images-upload";
 const multer = require("multer");
-// const SelectPhoto= (props) => {
-//   const [pictures, setPictures] = useState([]);
-
-  // const onDrop = picture => {
-  //   setPictures([...pictures, picture]);
-  // };
-  //   return (
-  //     <div className="SelectPhoto" style={{ backgroundImage: "url('/images/background.png')" }}>
-  //         {/* <h1>All Photos</h1>
-  //       <button onClick={selectPhoto}>Select</button> */}
-  //   <ImageUploader 
-  //     {...props}
-  //     withIcon={true}
-  //     onChange={onDrop}
-  //     imgExtension={[".jpg", ".gif", ".png", ".gif"]}
-  //     maxFileSize={5242880}
-  //     />
-  // </div>
-  //   )
-  // }
-
-  // const SelectPhoto =(props) => {
-
-  // }
-
-
-
-
 
 const SelectPhoto = (props) => {
-    // const [title, setName] = React.useState("");
-    // const [content, setDescription] = React.useState("");
-    // const [isPrivate, setPrivate] = React.useState(false);
-    const [selectedFile, setSelectedFile] = React.useState([]);
-	  const [isFilePicked, setIsFilePicked] = React.useState(false);
+	const [selectedFile, setSelectedFile] = React.useState([]);
+	const [isFilePicked, setIsFilePicked] = React.useState(false);
     // const fileInput = useRef(null)
     const onDrop = e => {
         if (e.target.files && e.target.files.length > 0 && e.size > 52428800)
@@ -58,7 +27,7 @@ const SelectPhoto = (props) => {
 		  formData.append('File', selectedFile);
 
 		fetch(
-			'`${process.env.REACT_APP_IP}:3001/api/uploadPhoto`',
+			`${process.env.REACT_APP_IP}:3001/api/uploadPhoto`,
 			{
 				method: 'POST',
                 headers: {
@@ -76,26 +45,6 @@ const SelectPhoto = (props) => {
               <h1>Select Photo</h1>
               <button id= "cancel"> Cancel</button>
               <button id="post_b">Choose</button>
-              {/* <label>
-                  Title:
-                  <input
-                  name="title"
-                  type="title"
-                  value={title}
-                  onChange={e => setName(e.target.value)}
-                  required />
-              </label>
-              
-              <label>
-                  Content:
-                  <input
-                  name="content"
-                  type="content"
-                  value={content}
-                  onChange={e => setDescription(e.target.value)}
-                  required />
-              </label> */}
-              
               <label>
                 Photo Selected:
                         <input
@@ -114,18 +63,6 @@ const SelectPhoto = (props) => {
 				            <p>Select a file to show details</p>
 			            )}
               </label>
-              
-  
-              {/* <label>
-              Private   
-                  <input
-                  name="Private"
-                  type="checkbox"
-                  onChange={e => setPrivate(e.target.value)}
-                  />
-                      
-              </label> */}
-  
           </form>
     
       </div>
@@ -133,6 +70,5 @@ const SelectPhoto = (props) => {
     
 };
 export default SelectPhoto;
-
 
 

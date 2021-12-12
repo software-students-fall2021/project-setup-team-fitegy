@@ -20,6 +20,7 @@
     "multer": "^1.4.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-image-upload": "^1.1.1",
     "react-images-upload": "^1.2.8",
     "react-router-dom": "^5.3.0",
@@ -28,7 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts --max_old_space_size=8192 build",
+    "build": "CI=false && react-scripts --max_old_space_size=8192 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
