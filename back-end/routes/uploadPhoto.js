@@ -34,9 +34,14 @@ router.post('/uploadPhoto', upload.single('selectedFile'), function (req, res, n
         'content-type': 'application/json; charset=utf-8'
     });
 
-    res.send(JSON.stringify(fileInfo));
-    res.send("success");
-    next();
+//     res.send(JSON.stringify(fileInfo));
+//     res.send("success");
+//     next();
+        try {
+        res.send(req.file);
+      }catch(err) {
+        res.send(400);
+      }
   })
 
 module.exports = router;
