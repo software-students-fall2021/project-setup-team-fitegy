@@ -1,7 +1,7 @@
-const server = require('../app');
+const server = require("../app");
 const chai = require("chai");
-const chaiHttp = require('chai-http');
-chai.should()
+const chaiHttp = require("chai-http");
+chai.should();
 chai.use(chaiHttp);
 
 // describe('/GET Photo Test', () => {
@@ -35,19 +35,20 @@ chai.use(chaiHttp);
 //                 res.should.have.status(200);
 //                 res.body.should.be.a('object');
 //                 res.body.should.have.property('data').eql('File Uploaded')
-                
+
 //                 done();
 //             })
 //     })
 // })
 
-describe('/GET Photo Data', () => {
-    it('should return a file', (done) => {
-      chai.request(server)
-          .post('/api/uploadPhoto')
-          .end((err, res) => {
-                res.should.have.status(200);
-                done();
-          });
-    });
+describe("/GET Photo Data", () => {
+  it("should return a file", (done) => {
+    chai
+      .request(server)
+      .options("/api/uploadPhoto")
+      .end((err, res) => {
+        res.should.have.status(204);
+        done();
+      });
+  });
 });
