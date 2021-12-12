@@ -26,7 +26,7 @@ const CreateNew = () =>{
                 <p>Post fitness updates or videos</p>
             </div>
             
-            <p id="message"> Share your story with the Fitegy community by posting images or videos.</p>
+            <p id="message1"> Share your story with the Fitegy community by posting images or videos.</p>
     </div>
    ) 
 }

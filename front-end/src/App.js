@@ -63,9 +63,9 @@ function App() {
       <NavBar />
       <div id="screen">
         <Switch>
+          <Route path="/login" component={LogIn} />
           <Route path="/CreateNew" component={CreateNew} />
           <Route path="/navBar" component={NavBar} />
-          <Route path="/login" component={LogIn} />
           <Route path="/feed" component={Feed} />
           <Route path="/notification-page" component={NotificationPage} />
           <Route path="/profile">
@@ -79,8 +79,6 @@ function App() {
           <Route path="/create-post" component={CreatePost} />
           <Route path="/select-photo" component={SelectPhoto} />
           <Route path="/settings" component={SettingsF} />
-
-
         </Switch>
       </div>
     </Router>
