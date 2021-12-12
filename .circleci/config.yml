@@ -2,6 +2,11 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+workflows:
+  test-env-vars:
+    jobs:
+      - build:
+          context: my_context_name
 # Define the jobs we want to run for this project
 jobs:
   build-and-test-express-js:
