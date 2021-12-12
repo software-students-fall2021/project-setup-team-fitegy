@@ -1,3 +1,4 @@
+//import React, {useState, useEffect} from "react";
 import * as React from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -19,8 +20,17 @@ const getChallenges = challenges.map((challenge) => {
   return <Challenge key={challenge.name}>{challenge}</Challenge>;
 });
 
-function ProfileBar() {
+const ProfileBar = () =>{
   const [value, setValue] = React.useState("1");
+  const [content, setContent] = React.useState([]);
+
+  React.useEffect(()=>{
+    fetch(`${process.env.REACT_APP_IP}:3001/api/profile`)
+      .then(res => res.json())
+      .then(data => setContent(data))
+  }, [])
+
+console.log(content[0]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -78,13 +88,13 @@ function ProfileBar() {
               sx={{ width: 390 }}
             >
               <Button variant="contained" color="warning">
-                You have done 23 challenges this month
+                "You have done {content[0].done} challenges this month"
               </Button>
               <Button variant="contained" color="warning">
-                You have 2 ongoing challenges
+                You have {content[0].ongoing} ongoing challenges
               </Button>
               <Button variant="contained" color="warning">
-                You have earned 430 points this month
+                You have earned {content[0].points} points this month
               </Button>
             </Stack>
           </TabPanel>
