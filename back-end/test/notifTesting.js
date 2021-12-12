@@ -10,6 +10,7 @@ describe("/GET Notification Data", () => {
       .request(server)
       .get("/api/notifications")
       .end((err, res) => {
+        if (err) done(err);
         res.should.have.status(200);
         res.body.should.be.a("array");
         // res.body.length.should.be.eql(10);
@@ -21,6 +22,7 @@ describe("/GET Notification Data", () => {
                 res.body[1].should.have.all.keys(["name", "text"]);
                 res.body[2].should.have.all.keys(["name", "text"]);
                 */
+
         done();
       });
   });

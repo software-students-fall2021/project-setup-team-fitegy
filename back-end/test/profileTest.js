@@ -10,6 +10,7 @@ describe("/GET Profile Stats Data", () => {
       .request(server)
       .get("/api/profile")
       .end((err, res) => {
+        if (err) done(err);
         res.should.have.status(200);
         res.body.map((ele) => {
           ele.should.be.an("object");
