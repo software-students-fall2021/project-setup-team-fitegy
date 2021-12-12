@@ -6,8 +6,7 @@ chai.use(chaiHttp);
 
 describe("/GET Challenge Data", () => {
   it("should return an array of objects", async () => {
-    this.timeout(0);
-    chai
+    await chai
       .request(server)
       .get("/api/challenge")
       .end((err, res) => {

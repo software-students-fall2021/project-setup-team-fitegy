@@ -6,8 +6,7 @@ chai.use(chaiHttp);
 
 describe("/GET Profile Stats Data", () => {
   it("should return an object with 3 keys", async () => {
-    this.timeout(0);
-    chai
+    await chai
       .request(server)
       .get("/api/profile")
       .end((err, res) => {
