@@ -5,7 +5,7 @@ chai.should();
 chai.use(chaiHttp);
 
 describe("/GET Profile Stats Data", () => {
-  it("should return an object with 3 keys", async (done) => {
+  it("should return an object with 3 keys", async () => {
     this.timeout(0);
     chai
       .request(server)

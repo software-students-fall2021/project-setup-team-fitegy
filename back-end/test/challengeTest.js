@@ -5,7 +5,7 @@ chai.should();
 chai.use(chaiHttp);
 
 describe("/GET Challenge Data", () => {
-  it("should return an array of objects", async (done) => {
+  it("should return an array of objects", async () => {
     this.timeout(0);
     chai
       .request(server)
