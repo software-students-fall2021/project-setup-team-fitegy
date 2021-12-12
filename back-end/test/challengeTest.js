@@ -10,6 +10,7 @@ describe("/GET Challenge Data", () => {
       .request(server)
       .get("/api/challenge")
       .end((err, res) => {
+        if (err) done(err);
         res.should.have.status(200);
         res.body.should.be.a("array");
         res.body.map((ele) => {
