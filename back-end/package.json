@@ -12,7 +12,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "nyc mocha --timeout 20000",
+    "test": "nyc mocha",
     "coverage": "nyc npm run test"
   },
   "author": "",
