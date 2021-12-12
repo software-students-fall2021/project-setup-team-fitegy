@@ -24,7 +24,6 @@ function stringToColor(string) {
 
 function stringAvatar(name) {
   let initials = ``;
-  console.log(name.split(" "));
   if(name.split(" ").length > 1){
     initials = `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`;
   }

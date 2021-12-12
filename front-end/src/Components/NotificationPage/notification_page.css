@@ -5,4 +5,10 @@
     justify-content: start;
     padding: 20px;
     flex-direction: column;
+    overflow: auto;
+    margin-bottom: 40px;
+}
+
+#notification_page::-webkit-scrollbar {
+    display: none;
 }

@@ -1,9 +1,9 @@
 #feed{
     width: 390px;
-    
+    height: 844px;
     display: flex;
     justify-content: start;
-    padding: 20px;
+    padding: 15px;
     flex-direction: column;
 }
 
@@ -21,4 +21,13 @@
 #notification img:hover{
     filter: brightness(60%);
     transition: filter 0.3s;
+}
+
+#feedPosts{
+    overflow: auto;
+    margin-bottom: 40px;
+    width: 375px;
+}
+#feedPosts::-webkit-scrollbar {
+    display: none;
 }

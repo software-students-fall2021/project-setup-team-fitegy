@@ -10,7 +10,7 @@ const NotificationPage = () => {
         .then(data => setContent(data));
     }, [])
     const notifications = content.map((notif)=>{
-      return <Notif name={notif.name} content={notif.text}/>
+      return <Notif name={notif.name} content={notif.text} key={notif.id}/>
     })
     return (
       <div id="notification_page" style={{ backgroundImage: "url('/images/background.png')", backgroundRepeat: "repeat-y"}}>

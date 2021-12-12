@@ -8,21 +8,6 @@ const axios = require("axios");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// mockaroo
-let mockData;
-const getMockData = async () => {
-    await axios
-        .get("https://my.api.mockaroo.com/post_data.json?key=44aeded0")
-        .then(apiResponse => mockData = apiResponse.data) 
-        //.catch(err => next(err)) // pass any errors to express
-
-    let newData = mockData.map((post) => {
-        return {"name": post.first_name + " " + post.last_name, "location" : post.location}
-    })
-    return newData
-}
-
-
 // mongoDB 
 require('dotenv').config({path:'../.env'});
 const mongoose = require("mongoose");
@@ -49,8 +34,8 @@ const SavePostData = async (content) =>{
     // create data
     let newData = await getMockData();
     const data= {
-        Name: newData[0].name,
-        Location: newData[0].location,
+        Name: "Alex Ko",
+        Location: "New York City",
         postText: content, 
         Likes: 0
     }
