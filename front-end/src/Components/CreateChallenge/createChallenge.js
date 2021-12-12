@@ -9,7 +9,18 @@ const CreateChallenge = () =>{
     const [description, setDescription] = React.useState("");
     const [date, setDate] = React.useState("");
     const [isPrivate, setPrivate] = React.useState(false);
-
+    const [selectedFile, setSelectedFile] = React.useState([]);
+	const [isFilePicked, setIsFilePicked] = React.useState(false);
+    const onDrop = e => {
+        // setPictures([...pictures, picture]);
+        // const file = e;
+        if (e.target.files && e.target.files.length > 0 && e.size > 52428800)
+        alert("File size exceeds the limit!" );
+        else{
+            setSelectedFile(e.target.files[0]);
+            setIsFilePicked(true);
+        }
+    };
     const handleSubmit = (event) => {
 
         event.preventDefault();
@@ -19,6 +30,7 @@ const CreateChallenge = () =>{
         Topic: ${topic}
         Dates: ${date}
         Set Private: ${isPrivate}
+        File: ${selectedFile.name}
         `);
 
         fetch(`${process.env.REACT_APP_IP}:3001/api/createChallenge`, {
@@ -83,9 +95,23 @@ const CreateChallenge = () =>{
                 required />
             </label>
             <label>
-            Image: 
-                <img id="image" alt="Challenge Icon" src="https://picsum.photos/200?page=home" width="50" height="50"/>
-            </label>
+                Photo Selected:
+                        <input
+                        name="selectedFile"
+                        type="file"
+                        onChange={onDrop}
+                        />
+                        {isFilePicked ? (
+				        <div>
+					        <p>Filename: {selectedFile.name}</p>
+					        <p>Filetype: {selectedFile.type}</p>
+					        <p>Size in bytes: {selectedFile.size}</p>
+					        <p>lastModifiedDate:{' '}{selectedFile.lastModifiedDate.toLocaleDateString()}</p>
+				        </div>
+			            ) : (
+				            <p>Select a file to show details</p>
+			            )}
+              </label>
             
 
             <label>
