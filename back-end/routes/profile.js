@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
-require("./createChallenge.js")
+require("./createStat.js")
 
 // let mockData;
 // const getMockData = async () => {
@@ -19,15 +19,13 @@ require('dotenv').config({path:'../.env'})
 const { Schema } = mongoose;
 const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@fitegy.w1f4m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 mongoose.connect(MONGODB_URL);
-const Stats = mongoose.model("Stats")
 
-router.get('/', async (req, res) => {
-    const newData = await Stats.find();
-    const postStat = newData.map((stat)=>{
-        return {ongoing: stat.ongoing_challenges}
-    })
-    console.log(postStat)
-    res.json(postStat);
-})
+const Stats = mongoose.model("Stats");
+
+router.get("/", async (req, res) => {
+    const stats = await Stats.find();
+    console.log(stats);
+    res.json(stats);
+  });
 
 module.exports = router;

@@ -57,7 +57,7 @@ const Post = (props) => {
 
           <div id="bottom_barfp">
             <div id="likefp" className="icon_container" onClick={handleClick}>
-              <img id="like_icon" lassName="icon" width="20" height="20" src="/images/heart.png" />
+              <img id="like_icon" className="icon" width="20" height="20" src="/images/heart.png" />
               <span> {count} Like </span>
             </div>
             <div id="commentfp" className="icon_containerfp">
