@@ -26,7 +26,8 @@ const Challenge = (props) => {
   return (
     <Card
       sx={{
-        minHeight: 220,
+        minHeight: 250,
+        minWidth: 160,
         mt: 2,
         display: "flex",
         justifyContent: "center",
@@ -38,8 +39,8 @@ const Challenge = (props) => {
           width: "90%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          justifyContent: "left",
+          alignItems: "left",
         }}
       >
         <Box
@@ -66,7 +67,7 @@ const Challenge = (props) => {
               <EmojiEventsIcon />
             </div>
           </Box>
-          <Box sx={{ fontSize: 10, my: 1 }}>{props.description}</Box>
+          <Box sx={{ fontSize: 10, my: 1, height: 15 }}>{props.description}</Box>
           <Box sx={{ fontSize: 10, mt: 1 }}>{props.date}</Box>
         </Box>
 

@@ -1,4 +1,6 @@
+//import React, {useState, useEffect} from "react";
 import * as React from "react";
+import { useState, useEffect } from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -6,22 +8,58 @@ import Tab from "@mui/material/Tab";
 import { TabContext } from "@mui/lab";
 import Tabs from "@mui/material/Tabs";
 import TabPanel from "@mui/lab/TabPanel";
-import Card from "@mui/material/Card";
-import { Container, CardMedia } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { Link } from "react-router-dom";
+import { Container} from "@mui/material";
 import "./ProfileBar.css";
-import Post from "../PostforProfile/PostforProfile.js";
-import Challenge from "../ChallengeforProfile/ChallengeforProfile";
-import { BsGear } from 'react-icons/bs'
+import Post from "../Post/Post.js";
+import Challenge from "../ChallengeManager/components/Challenge.js";
 
-const challenges = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />];
-const getChallenges = challenges.map((challenge) => {
-  return <Challenge key={challenge.name}>{challenge}</Challenge>;
-});
 
-function ProfileBar() {
-  const [value, setValue] = React.useState("1");
+const ProfileBar = () =>{
+  let userName = 'Alex Ko'
+  const [value, setValue] = useState("1");
+  const [content, setContent]  = useState([{"_id":"61ad5a3acb0e67062265765a","ongoing":2,"done":8,"points":57}]);
+  const [myPosts, setPost] = useState([{"name":"Veriee Burnhams","location":"Alaska","text":"Doing my morning yoga session created by me and coach Lin. Join us for a spiritual and healthy start of your day!🤍🔮🐈🌫","id":"6199862dd86253d2756e0fc6","likes":42}]);
+  const [challenge, setChallenges] = useState([{"title":"Christmas Yoga","description":"This Xmas let's get fit with the family! ","date":"2021-12-25"}]);
+// initial posts. later fetches data from MongoDB
+
+  useEffect(()=>{
+    fetch(`${process.env.REACT_APP_IP}:3001/api/profile`)
+      .then(res => res.json())
+      .then(data => setContent(data))
+  }, [])
+  
+  useEffect(()=>{
+    fetch(`${process.env.REACT_APP_IP}:3001/api/feed`)
+        .then((res) => res.json())
+        .then((data) => setPost(data))
+  }, [])
+
+  useEffect(()=>{
+    fetch(`${process.env.REACT_APP_IP}:3001/api/challenge`)
+        .then((res) => res.json())
+        .then((data) => setChallenges(data))
+  }, [])
+  
+  const getChallenges = challenge.map((challenge) => {
+    return (
+      <Challenge
+       key={challenge.name}
+       title={challenge.title}
+       description={challenge.description}
+        date={challenge.date}
+      />
+    );
+  });
+
+  const myPost = [];
+  for (var i = 0; i<myPosts.length; i++){
+    if (myPosts[i].name == userName){
+      myPost.push(myPosts[i]);
+    }
+  }
+  const userPosts = myPost.map((post)=>{
+    return <Post name={post.name} location={post.location} content={post.text} id = {post.id} likes = {post.likes}/>
+  })
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -61,21 +99,7 @@ function ProfileBar() {
           <TabPanel value="1">
             <Box id="posts" sx={{ width: 390 }}>
               <Container>
-                <Post
-                  name="James Bond"
-                  location="Manhattan"
-                  content="Brooklyn Halloween Challenge: every sunday morning we will be doing a 5k vampire run from Brooklyn to Manhattan!"
-                />
-                <Post
-                  name="James Bond"
-                  location="Manhattan"
-                  content="Update: 2 weeks into the Kyrie Irving Leg Day Challenge. Feeling stronger!!💪"
-                />
-                <Post
-                  name="James Bond"
-                  location="Manhattan"
-                  content="Doing my morning yoga session created by me and coach Lin. Join us for a spiritual and healthy start of your day!🤍🔮🐈🌫"
-                />
+                {userPosts}
               </Container>
             </Box>
           </TabPanel>
@@ -86,15 +110,18 @@ function ProfileBar() {
               direction="column"
               sx={{ width: 390 }}
             >
-              <Button variant="contained" color="warning">
-                You have done 23 challenges this month
-              </Button>
-              <Button variant="contained" color="warning">
-                You have 2 ongoing challenges
-              </Button>
-              <Button variant="contained" color="warning">
-                You have earned 430 points this month
-              </Button>
+
+            <Button variant="contained" color="warning">
+                "You have done {content[0].done} challenges this month"
+            </Button>
+            <Button variant="contained" color="warning">
+              "You have {content[0].ongoing} ongoing challenges"
+            </Button>
+            <Button variant="contained" color="warning">
+              "You have earned {content[0].points} points this month"
+            </Button>     
+      
+              
             </Stack>
           </TabPanel>
 
@@ -102,9 +129,10 @@ function ProfileBar() {
             <Container
               id="challenges"
               sx={{
+                width: 390,
                 display: "grid",
                 gridTemplateColumns: "repeat(2, 1fr)",
-                gap: 0,
+                gap: 1,
               }}
             >
               {getChallenges}

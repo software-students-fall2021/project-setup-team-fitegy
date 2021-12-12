@@ -43,19 +43,6 @@ const SaveChallengeData = async (data) => {
   })
 } 
 
-//Schema for number of ongoing challenges. Added this bc needed for profile page
-const StatSchema = new mongoose.Schema({
-  ongoing_challenges: Number
-})
-const Stats = mongoose.model("Stats", StatSchema);
-
-//function that updates the number of user's ongoing challenges
-const SaveStatsData = async () =>{
-  const stat = await Post.find()
-  stat.ongoing_challenges  = stat.ongoing_challengss + 1;
-  stat.save();
-}
-
 router.post("/", (req, res) => {
     const title = req.body.name
     const description = req.body.description
