@@ -14,9 +14,11 @@ jobs:
       - checkout
       - run: echo "this is the build and test express.js job"
       - run:
-          command: |
-            echo $DB_USERNAME
-            echo $DB_PASSWORD
+        name: Add env variables
+        command: |
+          echo $DB_USERNAME
+          echo $DB_PASSWORD
+      - run: |
           cd back-end
           pwd # for debugging: show current working directory
           ls # for debugging: show sub-directories in here
