@@ -17,6 +17,7 @@ jobs:
           cd back-end
           pwd # for debugging: show current working directory
           ls # for debugging: show sub-directories in here
+          no_output_timeout: 1200
       - run: |
           cd back-end
           npm install # install all dependencies listed in package.json
