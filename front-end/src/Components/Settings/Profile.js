@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Link } from 'react-router-dom';
 
 
 /* Handles the change password button in the settings page.
@@ -28,10 +29,6 @@ function pass() {
     }
 }
 
-function logOff() {
-    alert("Logged off")
-}
-
 
 function Profile(){
 
@@ -49,7 +46,7 @@ function Profile(){
                 </p>
              
                 <p>
-                    <button onClick = {logOff}> Log Off </button>
+                    <button > <Link to="/login"> Log Off </Link> </button>
                 </p>
             </body>
 
