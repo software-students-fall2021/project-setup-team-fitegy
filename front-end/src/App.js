@@ -47,9 +47,9 @@ function App() {
           <li>
             <Link to="/create-post">Create Post</Link>
           </li>
-          <li>
-            <Link to="/select-photo">Select Photo</Link>
-          </li>
+//           <li>
+//             <Link to="/select-photo">Select Photo</Link>
+//           </li>
           <li>
             <Link to="/settings">Settings</Link>
           </li>
@@ -70,7 +70,7 @@ function App() {
           <Route path="/create-challenge" component={CreateChallenge} />
           <Route path="/challenge-manager" component={ChallengeManager} />
           <Route path="/create-post" component={CreatePost} />
-          <Route path="/select-photo" component={SelectPhoto} />
+//           <Route path="/select-photo" component={SelectPhoto} />
           <Route path="/settings" component={SettingsF} />
 
         </Switch>
