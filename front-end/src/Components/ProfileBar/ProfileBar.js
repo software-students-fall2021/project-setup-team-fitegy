@@ -1,4 +1,3 @@
-//import React, {useState, useEffect} from "react";
 import * as React from "react";
 import { useState, useEffect } from "react";
 import Stack from "@mui/material/Stack";
@@ -8,12 +7,15 @@ import Tab from "@mui/material/Tab";
 import { TabContext } from "@mui/lab";
 import Tabs from "@mui/material/Tabs";
 import TabPanel from "@mui/lab/TabPanel";
-import { Container} from "@mui/material";
+import Card from "@mui/material/Card";
+import { Container, CardMedia } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { Link } from "react-router-dom";
 import "./ProfileBar.css";
-import Post from "../Post/Post.js";
+import { BsGear } from 'react-icons/bs';
 import Challenge from "../ChallengeManager/components/Challenge.js";
-import {Link} from "react-router-dom";
-import { BsGear } from "react-icons/bs"
+import Post from "../Post/Post.js";;
+
 
 const ProfileBar = () =>{
   let userName = 'Alex Ko'
@@ -53,7 +55,7 @@ const ProfileBar = () =>{
   });
 
   const myPost = [];
-  for (var i = 0; i<myPosts.length; i++){
+  for (var i = myPosts.length-1; i>=0; i--){
     if (myPosts[i].name == userName){
       myPost.push(myPosts[i]);
     }
@@ -71,6 +73,31 @@ const ProfileBar = () =>{
       id="screen"
       style={{ height: 844, backgroundImage: "url('/images/background.png')" }}
     >
+        <Container id="profilebar" sx={{ width: 390, height: 422}}> 
+        
+        <br></br>
+        <br></br>
+        <h1> Profile </h1>
+        
+
+
+        
+        <img src={"https://i.picsum.photos/id/177/2515/1830.jpg?hmac=G8-2Q3-YPB2TreOK-4ofcmS-z5F6chIA0GHYAe5yzDY"} alt="Profile Pic" id="profilepic" />
+        <br></br>
+
+       <br></br>
+        <body id="container">
+                  
+          <p> Alex Ko <br></br> Manhattan, NYC</p>  
+
+          <hr id="hr"></hr>
+
+          <p>I am a beginner at the gym, and I am a bit shy at the gym. I'm looking for some new gym buddies at NYU</p>
+
+        </body>
+  
+
+      </Container>
       <Container id="profilebar" sx={{ width: 390, height: 422 }}>
         <TabContext value={value}>
           <Box

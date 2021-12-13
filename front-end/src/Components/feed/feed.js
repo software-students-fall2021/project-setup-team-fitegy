@@ -3,7 +3,7 @@ import "./feed.css";
 import Post from "../Post/Post.js";
 import IconButton from "@mui/material/IconButton";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 
 const Feed = () => {
@@ -24,9 +24,9 @@ const Feed = () => {
     return (
       <div id="feed" style={{ backgroundImage: "url('/images/background.png')"}}>
           <div id="notification">
-          <IconButton component={Link} to="/notification-page" aria-label= "notificationicon" color="primary">
+          <IconButton component={Link} to="/notification-page"  color="primary">
               <NotificationsNoneIcon />
-          </IconButton>
+          </IconButton> 
           </div>
       
           <div id="feedPosts">

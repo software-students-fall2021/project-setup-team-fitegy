@@ -7,7 +7,7 @@ function name() {
     .then(res => res.json())
     .then(data => console.log(data))
     .catch(error => console.log('Error'))
-
+    
 }
 
 function Account(props){

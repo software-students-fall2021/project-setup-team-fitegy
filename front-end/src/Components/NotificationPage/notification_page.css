@@ -5,8 +5,7 @@
     justify-content: start;
     padding: 20px;
     flex-direction: column;
-    overflow: auto;
-    margin-bottom: 40px;
+    overflow: scroll;
 }
 
 #notification_page::-webkit-scrollbar {

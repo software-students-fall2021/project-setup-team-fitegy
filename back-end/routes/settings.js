@@ -11,7 +11,7 @@ const MONGODB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_P
 mongoose.connect(MONGODB_URL);
 
 
-// Define Schema for each notification
+// Define Schema for each user
 const UserInfoSchema = new Schema({
   name: String,
   lastName: String,
@@ -19,7 +19,7 @@ const UserInfoSchema = new Schema({
   location: String,
 });
 
-// Model for each notification
+// Model for each user
 const UserInfo = mongoose.model("Userinfo", UserInfoSchema);
 
 

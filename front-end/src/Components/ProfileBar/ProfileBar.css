@@ -10,7 +10,6 @@
     align-self: flex-end;
     flex-direction: column;
     justify-content: start;
-    //margin-top: 300px;
 }
 #tabbar{
     display: flex;
@@ -46,4 +45,57 @@
     height: 350px;
     margin-left: -48px;
     overflow: scroll;
+}
+
+#profilepic {
+    border: 2px solid white;
+    display: flex;
+    border-radius: 50%;
+    width: 50px;
+    overflow: hidden;
+    float: right;
+    margin-left: 150px;
+    height:50px;
+   
+  }
+  
+
+
+
+
+#container{
+    /* Sets flex box*/
+    display: flex;
+    flex-direction: column;
+    color: black;
+  
+    /* Background Blue*/
+    background-color: white;
+    /*backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    */
+
+
+    /* Sets the border and centers text and box*/
+    border-radius: 15px;
+    border: 1px solid whitesmoke;
+    text-align: center;
+    
+    justify-content: center;
+    width: 80%;
+    margin-left: 35px;
+
+  
+}
+
+#hr{
+    width: 75%;
+    height: 1px;
+}
+
+
+#profile{
+    color: white;
+    justify-content: center;
+    text-align: center;
 }
