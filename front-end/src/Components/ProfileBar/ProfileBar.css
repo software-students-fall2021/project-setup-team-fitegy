@@ -10,7 +10,6 @@
     align-self: flex-end;
     flex-direction: column;
     justify-content: start;
-    //margin-top: 300px;
 }
 #tabbar{
     display: flex;

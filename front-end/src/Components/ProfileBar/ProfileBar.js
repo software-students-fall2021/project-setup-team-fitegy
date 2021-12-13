@@ -1,4 +1,3 @@
-//import React, {useState, useEffect} from "react";
 import * as React from "react";
 import { useState, useEffect } from "react";
 import Stack from "@mui/material/Stack";
@@ -8,10 +7,14 @@ import Tab from "@mui/material/Tab";
 import { TabContext } from "@mui/lab";
 import Tabs from "@mui/material/Tabs";
 import TabPanel from "@mui/lab/TabPanel";
-import { Container} from "@mui/material";
+import Card from "@mui/material/Card";
+import { Container, CardMedia } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { Link } from "react-router-dom";
 import "./ProfileBar.css";
-import Post from "../Post/Post.js";
+import { BsGear } from 'react-icons/bs';
 import Challenge from "../ChallengeManager/components/Challenge.js";
+import Post from "../Post/Post.js";;
 
 
 const ProfileBar = () =>{
