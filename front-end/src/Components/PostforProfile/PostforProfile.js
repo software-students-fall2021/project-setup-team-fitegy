@@ -42,11 +42,14 @@ const Post = (props) => {
     return (
       <div id="postfp">
           <div id="top_profilefp">
+          
           <Avatar id="avatarfp" {...stringAvatar(props.name)} />
             <div id="detailsfp">
               <p className="namefp"> {props.name}</p>
               <p className="locationfp"> {props.location}</p>
             </div>
+          
+
           </div>
 
           <Divider id="dividerfp" variant="middle" />
@@ -57,7 +60,7 @@ const Post = (props) => {
 
           <div id="bottom_barfp">
             <div id="likefp" className="icon_container" onClick={handleClick}>
-              <img id="like_icon" lassName="icon" width="20" height="20" src="/images/heart.png" />
+              <img id="like_icon" className="icon" width="20" height="20" src="/images/heart.png" />
               <span> {count} Like </span>
             </div>
             <div id="commentfp" className="icon_containerfp">

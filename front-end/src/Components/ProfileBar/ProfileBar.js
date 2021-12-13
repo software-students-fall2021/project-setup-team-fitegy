@@ -32,6 +32,35 @@ function ProfileBar() {
       id="screen"
       style={{ height: 844, backgroundImage: "url('/images/background.png')" }}
     >
+
+      {/* Container for the Top Half of Page With Profile Info*/}
+      <Container id="profilebar" sx={{ width: 390, height: 422}}> 
+        
+        <br></br>
+        <br></br>
+        <h1> Profile </h1>
+        
+
+
+        <br></br>
+        <img src={"https://i.picsum.photos/id/177/2515/1830.jpg?hmac=G8-2Q3-YPB2TreOK-4ofcmS-z5F6chIA0GHYAe5yzDY"} alt="Profile Pic" id="pfp" width={50} height={50} />
+        <br></br>
+
+       <br></br>
+        <body id="container">
+                  
+          <p> Alex Ko <br></br> Manhattan, NYC</p>  
+
+          <hr id="hr"></hr>
+
+          <p>I am a beginner at the gym, and I am a bit shy at the gym. I'm looking for some new gym buddies at NYU</p>
+
+        </body>
+  
+
+      </Container>
+
+      {/* Container for Bottom Half with Tabs and Icon */}
       <Container id="profilebar" sx={{ width: 390, height: 422 }}>
         <TabContext value={value}>
           <Box
@@ -53,28 +82,30 @@ function ProfileBar() {
             
               
             </Tabs>
+
             {/* Button to Settings Page */}
             <Link to="/Settings">
                 <h5> <BsGear size="1.5em"/> </h5>
-              </Link>  
+            </Link>  
+
           </Box>
           <TabPanel value="1">
             <Box id="posts" sx={{ width: 390 }}>
               <Container>
                 <Post
-                  name="James Bond"
+                  name="Alex Ko"
                   location="Manhattan"
-                  content="Brooklyn Halloween Challenge: every sunday morning we will be doing a 5k vampire run from Brooklyn to Manhattan!"
+                  content="Brooklyn Halloween Challenge: every sunday we will be doing a 5k vampire run from Brooklyn to Manhattan!"
                 />
                 <Post
-                  name="James Bond"
+                  name="Alex Ko"
                   location="Manhattan"
                   content="Update: 2 weeks into the Kyrie Irving Leg Day Challenge. Feeling stronger!!💪"
                 />
                 <Post
-                  name="James Bond"
+                  name="Alex Ko"
                   location="Manhattan"
-                  content="Doing my morning yoga session created by me and coach Lin. Join us for a spiritual and healthy start of your day!🤍🔮🐈🌫"
+                  content="Doing my morning yoga session created by me and coach Lin. Join us for a spiritual start to your day!🤍🔮🐈🌫"
                 />
               </Container>
             </Box>
