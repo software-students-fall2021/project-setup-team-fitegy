@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { Link } from 'react-router-dom';
-
+import { BrowserRouter as Link } from "react-router-dom";
+import { Link as L } from 'react-router-dom'
 
 /* Handles the change password button in the settings page.
     Asks for two passwords and if they match it sends the new
@@ -29,6 +29,14 @@ function pass() {
     }
 }
 
+function logOff() {
+    alert("Logged off")
+}
+
+function logOut(){
+    localStorage.removeItem("token")
+}
+
 
 function Profile(){
 
@@ -46,7 +54,9 @@ function Profile(){
                 </p>
              
                 <p>
-                    <button > <Link to="/login"> Log Off </Link> </button>
+                    
+                    <button onClick={logOut}> <L id = "logoutButton" to="/login"> Log Off</L> </button>
+        
                 </p>
             </body>
 

@@ -55,7 +55,7 @@ const ProfileBar = () =>{
   });
 
   const myPost = [];
-  for (var i = 0; i<myPosts.length; i++){
+  for (var i = myPosts.length-1; i>=0; i--){
     if (myPosts[i].name == userName){
       myPost.push(myPosts[i]);
     }
@@ -81,8 +81,8 @@ const ProfileBar = () =>{
         
 
 
-        <br></br>
-        <img src={"https://i.picsum.photos/id/177/2515/1830.jpg?hmac=G8-2Q3-YPB2TreOK-4ofcmS-z5F6chIA0GHYAe5yzDY"} alt="Profile Pic" id="pfp" width={50} height={50} />
+        
+        <img src={"https://i.picsum.photos/id/177/2515/1830.jpg?hmac=G8-2Q3-YPB2TreOK-4ofcmS-z5F6chIA0GHYAe5yzDY"} alt="Profile Pic" id="profilepic" />
         <br></br>
 
        <br></br>

@@ -24,7 +24,7 @@
 }
 
 #feedPosts{
-    overflow: auto;
+    overflow: scroll;
     margin-bottom: 40px;
     width: 375px;
 }

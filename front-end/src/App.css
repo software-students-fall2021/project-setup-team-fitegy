@@ -1,8 +1,13 @@
 
 #screen {
+  width: 390px;
+  height: 844px;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+
+

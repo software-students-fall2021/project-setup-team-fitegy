@@ -52,7 +52,6 @@ const CreateChallenge = () =>{
 
   return (
     <div id="Challenge" style={{ backgroundImage: "url('/images/background.png')" }}>
-        <h1> Challenge Manager </h1>
         <form method="POST" action='http://localhost:3001/api/feed' onSubmit={handleSubmit}>
             <h1>Create Challenge</h1>
             <button id= "cancel" component={Link} to="/createNew"> Cancel</button>

@@ -47,17 +47,15 @@
     overflow: scroll;
 }
 
-#pfp {
-   
+#profilepic {
     border: 2px solid white;
     display: flex;
-    
     border-radius: 50%;
     width: 50px;
     overflow: hidden;
     float: right;
-
     margin-left: 150px;
+    height:50px;
    
   }
   
