@@ -2,20 +2,6 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
-let mockData;
-const getMockData = async () => {
-    await axios
-        .get("https://my.api.mockaroo.com/random_names.json?key=44aeded0")
-        .then(apiResponse => mockData = apiResponse.data) 
-        .then(() => console.log(mockData))
-        //.catch(err => next(err)) // pass any errors to express
-
-    let newData = mockData.map((notif) => {
-        return {"name": notif.first_name + " " + notif.last_name}
-    })
-    return newData
-}
-
 // mongoDB 
 require('dotenv').config({path:'../.env'});
 const mongoose = require("mongoose");
@@ -39,7 +25,7 @@ const SaveNotifData = async (text) =>{
     // create data
     let newData = await getMockData();
     const data= {
-        Name: newData[0].name,
+        Name: "Alex Ko",
         Text: text, 
     }
 
@@ -61,7 +47,7 @@ const SaveNotifData = async (text) =>{
 router.get('/', async (req, res) => {
     const Notifs = await Notif.find();
     const allNotifs = Notifs.map((notif)=>{
-        return {name: notif.Name, text: notif.Text}
+        return {name: notif.Name, text: notif.Text, id: notif.id}
       })
     res.json(allNotifs);
 })

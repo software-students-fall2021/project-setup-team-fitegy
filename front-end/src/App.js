@@ -12,7 +12,6 @@ import SelectPhoto from "./Components/SelectPhoto/SelectPhoto.js";
 import LogIn from "./Components/LogIn/logIn.js";
 import NotificationPage from "./Components/NotificationPage/NotificationPage.js";
 import { Login, Settings } from "@mui/icons-material";
-import Challenge from "./Components/ChallengeforProfile/ChallengeforProfile";
 import NavBar from "./Components/NavBar/navBar";
 import SettingsF from "./Components/Settings/Settings.js"
 
@@ -48,9 +47,9 @@ function App() {
           <li>
             <Link to="/create-post">Create Post</Link>
           </li>
-          <li>
-            <Link to="/select-photo">Select Photo</Link>
-          </li>
+//           <li>
+//             <Link to="/select-photo">Select Photo</Link>
+//           </li>
           <li>
             <Link to="/settings">Settings</Link>
           </li>
@@ -71,7 +70,7 @@ function App() {
           <Route path="/create-challenge" component={CreateChallenge} />
           <Route path="/challenge-manager" component={ChallengeManager} />
           <Route path="/create-post" component={CreatePost} />
-          <Route path="/select-photo" component={SelectPhoto} />
+//           <Route path="/select-photo" component={SelectPhoto} />
           <Route path="/settings" component={SettingsF} />
 
         </Switch>

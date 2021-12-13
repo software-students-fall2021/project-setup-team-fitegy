@@ -10,18 +10,14 @@ describe("/GET Challenge Data", () => {
       .request(server)
       .get("/api/challenge")
       .end((err, res) => {
+        if (err) done(err);
         res.should.have.status(200);
         res.body.should.be.a("array");
         res.body.map((ele) => {
           ele.should.be.an("object");
-          ele.should.have.all.keys([
-            "title",
-            "description",
-            "dateStart",
-            "dateEnd",
-            "mainIcon",
-            "subIcon",
-          ])
+          if (ele.keys !== undefined) {
+            ele.should.have.all.keys(["title", "description", "date"]);
+          }
         });
         done();
       });
