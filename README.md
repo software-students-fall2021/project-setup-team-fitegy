@@ -1,5 +1,9 @@
 [![Fitegy](https://circleci.com/gh/software-students-fall2021/project-setup-team-fitegy.svg?style=shield)](https://app.circleci.com/pipelines/github/software-students-fall2021/project-setup-team-fitegy/61/workflows/d3328b56-d1f9-4d26-b830-b43384ded38c/jobs/119)
 
+# Our Demo is live here!
+
+https://youtu.be/EO712ezMJXg
+
 # Deployed Site
 
 [143.244.179.29](http://143.244.179.29)
@@ -34,6 +38,3 @@ Corey Dubin: https://github.com/dubincorey \
 Ina Youn: https://github.com/inayoun \
 Salma Hashem: https://github.com/Salma-Hashem
 
-# Instructions
-
-Coming soon.
