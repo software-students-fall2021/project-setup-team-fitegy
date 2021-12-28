@@ -27,7 +27,7 @@ Our product vision is to create a socially engaging way to stay healthy with fri
 
 # History
 
-Fitegy began with the idea that working out alone may be difficult to keep up with for beginners or those motivated by others or by challenges. The idea was proposed by Alex Ko and Cory Dublin to create a social app that keeps friends motivated to stay fit. For more information and how to contribute to our project, please read [CONTRIBUTING.md](./CONTRIBUTING.md)
+Fitegy began with the idea that working out alone may be difficult to keep up with for beginners or those motivated by others or by challenges. The idea was proposed by Alex Ko, Salma Hashem and Cory Dublin to create a social app that keeps friends motivated to stay fit. For more information and how to contribute to our project, please read [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 # Core Team Members
 
