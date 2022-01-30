@@ -6,7 +6,7 @@
 </p>
 
 The site map for Fitegy. Basically we will have 4 main screens: 
-1. Timneline (feed)
+1. Timeline (feed)
 2. Create
 3. Challenge Manager
 4. User Profile
